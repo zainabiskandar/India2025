@@ -87,7 +87,7 @@ export function NavBar({ currentPage, onNavigate }: NavBarProps) {
             />
             
             {/* Flags */}
-            <div className="flex items-center gap-3">
+            <div className="flags-container flex items-center gap-3">
               <button
                 onClick={() => onNavigate('pretrip')}
                 className="flag-sg flex items-center transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-opacity-50 rounded-sm p-1"

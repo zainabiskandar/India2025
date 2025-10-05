@@ -588,7 +588,7 @@ html {
     outline-offset: 2px;
   }
 
-  /* Enforce ordering on mobile: [home] [flags] [logos] [spacer] [menu] */
+  /* Enforce ordering on mobile: [home] [flags + logos container] [menu] */
   .nav-left {
     display: flex;
     align-items: center;
@@ -600,16 +600,11 @@ html {
     order: 10;
   }
 
-  .flag-sg {
+  .flags-container {
     order: 20;
-  }
-
-  .flag-in {
-    order: 30;
-  }
-
-  .partner-logos {
-    order: 40;
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
 
   .nav-menu-toggle {

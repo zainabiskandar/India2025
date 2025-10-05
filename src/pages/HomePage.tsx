@@ -1,7 +1,6 @@
 import React from 'react';
 import { DayChip } from '../components/Tag';
 import { HeroSection } from '../components/layout/HeroSection';
-import { ImageCarousel } from '../components/journal/ImageCarousel';
 import { journalConfig } from '../data/journalConfig';
 
 interface HomePageProps {
@@ -89,31 +88,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
           >
             This journal will capture reflections and learnings from a 10-day immersion across Chennai and Coimbatore—updated daily during the programme.
           </p>
-        </div>
-      </section>
-
-      {/* Tagline */}
-      <section className="container-mobile md:container-desktop mb-12">
-        <div className="text-center max-w-3xl mx-auto">
-          <h3
-            style={{
-              color: 'var(--navy)',
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: 'var(--h3)',
-              fontWeight: '600',
-              fontStyle: 'italic',
-              marginBottom: '3rem'
-            }}
-          >
-            Two Cities, Ten Days, Countless Discoveries
-          </h3>
-        </div>
-      </section>
-
-      {/* Image Carousel Section */}
-      <section className="container-mobile md:container-desktop mb-16">
-        <div className="max-w-6xl mx-auto">
-          <ImageCarousel />
         </div>
       </section>
 

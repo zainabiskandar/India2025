@@ -46,17 +46,19 @@ export function ImageCarousel({ className = '' }: ImageCarouselProps) {
         opts={{
           align: 'start',
           loop: true,
+          dragFree: true,
         }}
         className="w-full"
       >
-        <CarouselContent className="-ml-2 md:-ml-4">
+        <CarouselContent className="-ml-3">
           {placeholderImages.map((image) => (
-            <CarouselItem key={image.id} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+            <CarouselItem key={image.id} className="pl-3 basis-1/2 md:basis-1/3 lg:basis-1/5">
               <div
-                className="relative aspect-[4/3] rounded-lg overflow-hidden"
+                className="relative aspect-[3/2] rounded-md overflow-hidden"
                 style={{
                   border: '1px solid var(--border)',
-                  backgroundColor: 'var(--subtle)'
+                  backgroundColor: 'var(--subtle)',
+                  height: '200px'
                 }}
               >
                 <img
@@ -72,21 +74,21 @@ export function ImageCarousel({ className = '' }: ImageCarouselProps) {
                   onMouseLeave={(e) => e.currentTarget.style.opacity = '0.85'}
                 />
                 <div
-                  className="absolute bottom-0 left-0 right-0 p-3"
+                  className="absolute bottom-0 left-0 right-0 p-2"
                   style={{
-                    background: 'linear-gradient(to top, rgba(0,0,0,0.6), transparent)',
+                    background: 'linear-gradient(to top, rgba(0,0,0,0.5), transparent)',
                   }}
                 >
                   <p
-                    className="text-xs"
                     style={{
-                      color: 'rgba(255, 255, 255, 0.9)',
+                      color: 'rgba(255, 255, 255, 0.85)',
                       fontFamily: "'Work Sans', system-ui, sans-serif",
                       fontWeight: '400',
+                      fontSize: '10px',
                       fontStyle: 'italic'
                     }}
                   >
-                    Placeholder - Journey photos coming soon
+                    Coming soon
                   </p>
                 </div>
               </div>

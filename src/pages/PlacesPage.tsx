@@ -1,6 +1,7 @@
 import React from 'react';
 import { BookOpen } from 'lucide-react';
 import { journalConfig, getDayStatus, isPublished } from '../data/journalConfig';
+import { ImageCarousel } from '../components/journal/ImageCarousel';
 
 interface PlacesPageProps {
   onNavigate: (page: string, day?: number) => void;
@@ -167,7 +168,7 @@ export function PlacesPage({ onNavigate }: PlacesPageProps) {
           {/* Journey Summary */}
           <div className="text-center mt-16 max-w-3xl mx-auto">
             <h3
-              className="mb-4"
+              className="mb-6"
               style={{
                 color: 'var(--navy)',
                 fontFamily: "'Cormorant Garamond', serif"
@@ -175,6 +176,11 @@ export function PlacesPage({ onNavigate }: PlacesPageProps) {
             >
               Two Cities, Ten Days, Countless Discoveries
             </h3>
+          </div>
+
+          {/* Image Gallery */}
+          <div className="mt-8 max-w-6xl mx-auto">
+            <ImageCarousel />
           </div>
         </div>
       </section>

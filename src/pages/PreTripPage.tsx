@@ -11,7 +11,7 @@ export function PreTripPage({ onNavigate }: PreTripPageProps) {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="mb-4" style={{ color: 'var(--singapore-red)' }}>
-            Pre-Trip Preparation (Singapore)
+            Pre-Trip Preparation
           </h1>
           <div className="flex justify-center items-center gap-3 mb-6">
             <span className="text-2xl">🇸🇬</span>
@@ -21,8 +21,8 @@ export function PreTripPage({ onNavigate }: PreTripPageProps) {
             <span className="text-2xl">🇮🇳</span>
           </div>
           <p className="max-w-2xl mx-auto" style={{ color: 'var(--muted)' }}>
-            Essential preparation steps and resources for The India Experience 2025 program, 
-            including application processes, pre-departure requirements, and cultural preparation.
+            These essential preparation steps and resources were required for the program,
+            including application processes, pre-departure requirements, and cultural preparation. Some of them can be found below.
           </p>
         </div>
 
@@ -34,7 +34,7 @@ export function PreTripPage({ onNavigate }: PreTripPageProps) {
               Application Process
             </h2>
             <div className="space-y-4">
-              <p>Information about the application process will be added here, including:</p>
+              <p>Information about the application process will be added here, including etc., etc.</p>
               <ul className="list-disc list-inside space-y-2 ml-4" style={{ color: 'var(--muted)' }}>
                 <li>Eligibility requirements</li>
                 <li>Application deadlines</li>
@@ -67,7 +67,7 @@ export function PreTripPage({ onNavigate }: PreTripPageProps) {
               Cultural Preparation
             </h2>
             <div className="space-y-4">
-              <p>Resources to help you prepare for the cultural experience:</p>
+              <p>Resources that were used to prepare for the exciting culture experience:</p>
               <ul className="list-disc list-inside space-y-2 ml-4" style={{ color: 'var(--muted)' }}>
                 <li>Introduction to Indian culture and customs</li>
                 <li>Basic Hindi and Tamil phrases</li>

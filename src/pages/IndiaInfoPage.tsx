@@ -21,8 +21,8 @@ export function IndiaInfoPage({ onNavigate }: IndiaInfoPageProps) {
             <span className="text-2xl">🏛️</span>
           </div>
           <p className="max-w-2xl mx-auto" style={{ color: 'var(--muted)' }}>
-            Discover the rich culture, history, and diversity of India as we prepare for 
-            our journey to Chennai and Coimbatore in Tamil Nadu.
+            Discovered the rich culture, history, and wildlife of India in preparation for
+            the exciting journey to Chennai, Coimbatore, and Tamil Nadu.
           </p>
         </div>
 

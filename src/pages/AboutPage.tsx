@@ -10,15 +10,23 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
       <div className="container-mobile md:container-desktop">
         <div className="max-w-4xl mx-auto">
 
-          {/* Personal Welcome */}
-          <div className="mb-20">
-            <div className="flex items-center gap-3 mb-8 justify-center">
+          {/* Header Section */}
+          <div className="text-center mb-12">
+            <h1 className="mb-4" style={{ color: 'var(--navy)' }}>
+              Welcome | Vanakkam
+            </h1>
+            <div className="flex justify-center items-center gap-3 mb-6">
+              <span className="text-2xl">🙏</span>
+              <div className="w-16 h-px" style={{ backgroundColor: 'var(--saffron)' }}></div>
               <span className="text-2xl">🌏</span>
-              <div className="w-12 h-px" style={{ backgroundColor: 'var(--saffron)' }}></div>
+              <div className="w-16 h-px" style={{ backgroundColor: 'var(--saffron)' }}></div>
               <span className="text-2xl">✨</span>
             </div>
+          </div>
 
-            <h1
+          {/* Personal Welcome */}
+          <div className="mb-20">
+            <h2
               className="mb-8 text-center"
               style={{
                 color: 'var(--navy)',
@@ -27,7 +35,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
               }}
             >
               Welcome to My Digital Diary
-            </h1>
+            </h2>
 
             <div
               className="prose prose-lg max-w-none"

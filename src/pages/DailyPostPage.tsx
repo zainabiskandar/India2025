@@ -76,7 +76,7 @@ export function DailyPostPage({ day, onNavigate }: DailyPostPageProps) {
     <div className="min-h-screen" style={{ backgroundColor: 'var(--bg)' }}>
       <article className="container-mobile md:container-desktop py-8 max-w-4xl mx-auto">
         <PrivacyNote />
-        
+
         {/* Sticky Back Button for Mobile */}
         <div className="fixed bottom-6 right-6 md:hidden z-50">
           <Button
@@ -90,7 +90,19 @@ export function DailyPostPage({ day, onNavigate }: DailyPostPageProps) {
             <Home className="h-5 w-5" />
           </Button>
         </div>
-        
+
+        {/* Page Header */}
+        <div className="text-center mb-12">
+          <h1 className="mb-4" style={{ color: 'var(--navy)' }}>
+            Travel Journal
+          </h1>
+          <div className="flex justify-center items-center gap-3 mb-8">
+            <span className="text-2xl">✍🏻</span>
+            <div className="w-16 h-px" style={{ backgroundColor: 'var(--saffron)' }}></div>
+            <span className="text-2xl">📖</span>
+          </div>
+        </div>
+
         {/* Header */}
         <header className="mb-12">
           <h1

@@ -1,181 +1,68 @@
 import React from 'react';
-import { MapPin, Calendar, Users, BookOpen } from 'lucide-react';
+import { BookOpen } from 'lucide-react';
 
 interface PlacesPageProps {
   onNavigate: (page: string, day?: number) => void;
 }
 
-interface Activity {
-  name: string;
-  type: 'cultural' | 'educational' | 'social' | 'reflection';
-}
-
 interface DayData {
-  day: number;
-  date: string;
-  activities: Activity[];
-  location: string;
+  day: number | string;
+  label: string;
 }
 
 export function PlacesPage({ onNavigate }: PlacesPageProps) {
   // Define post status for each day
   const dayStatuses = [
-    { day: 0, status: 'posted' as const },    // Singapore airport
-    { day: 1, status: 'planned' as const },   // Chennai arrival
-    { day: 2, status: 'planned' as const },   // Chennai
-    { day: 3, status: 'not-planned' as const },
-    { day: 4, status: 'not-planned' as const },
-    { day: 5, status: 'not-planned' as const },
-    { day: 6, status: 'not-planned' as const },
-    { day: 7, status: 'not-planned' as const },
-    { day: 8, status: 'not-planned' as const },
-    { day: 9, status: 'not-planned' as const },
-    { day: 10, status: 'not-planned' as const }
+    { day: 'goodbye-sg', status: 'posted' as const },
+    { day: 1, status: 'planned' as const },
+    { day: 2, status: 'planned' as const },
+    { day: 3, status: 'planned' as const },
+    { day: 4, status: 'planned' as const },
+    { day: 5, status: 'planned' as const },
+    { day: 6, status: 'planned' as const },
+    { day: 7, status: 'planned' as const },
+    { day: 8, status: 'planned' as const },
+    { day: 9, status: 'planned' as const },
+    { day: 10, status: 'planned' as const },
+    { day: 'goodbye-india', status: 'planned' as const }
   ];
 
-  const getDayStatus = (day: number) => {
+  const getDayStatus = (day: number | string) => {
     const statusEntry = dayStatuses.find(s => s.day === day);
-    return statusEntry?.status || 'not-planned';
+    return statusEntry?.status || 'planned';
   };
 
   const journeyData: DayData[] = [
     {
-      day: 0,
-      date: "Oct 7",
-      location: "Singapore",
-      activities: [
-        { name: "Airport Departure", type: "social" },
-        { name: "Pre-Journey Reflections", type: "reflection" },
-        { name: "Flight to Chennai", type: "social" }
-      ]
+      day: 'goodbye-sg',
+      label: 'Goodbye Singapore'
     },
+    { day: 1, label: 'Day 1' },
+    { day: 2, label: 'Day 2' },
+    { day: 3, label: 'Day 3' },
+    { day: 4, label: 'Day 4' },
+    { day: 5, label: 'Day 5' },
+    { day: 6, label: 'Day 6' },
+    { day: 7, label: 'Day 7' },
+    { day: 8, label: 'Day 8' },
+    { day: 9, label: 'Day 9' },
+    { day: 10, label: 'Day 10' },
     {
-      day: 1,
-      date: "Oct 8",
-      location: "Chennai",
-      activities: [
-        { name: "Arrival & Orientation", type: "social" },
-        { name: "Cultural Welcome", type: "cultural" },
-        { name: "First Impressions", type: "reflection" }
-      ]
-    },
-    {
-      day: 2,
-      date: "Oct 9", 
-      location: "Chennai",
-      activities: [
-        { name: "IIT Madras Visit", type: "educational" },
-        { name: "Campus Tour", type: "educational" },
-        { name: "Student Interactions", type: "social" }
-      ]
-    },
-    {
-      day: 3,
-      date: "Oct 10",
-      location: "Chennai", 
-      activities: [
-        { name: "Kapaleeshwarar Temple", type: "cultural" },
-        { name: "Mylapore Heritage Walk", type: "cultural" },
-        { name: "Spiritual Reflections", type: "reflection" }
-      ]
-    },
-    {
-      day: 4,
-      date: "Oct 11",
-      location: "Chennai",
-      activities: [
-        { name: "Government Museum", type: "educational" },
-        { name: "Bronze Gallery Tour", type: "cultural" },
-        { name: "Historical Analysis", type: "reflection" }
-      ]
-    },
-    {
-      day: 5,
-      date: "Oct 12",
-      location: "Chennai",
-      activities: [
-        { name: "DakshinaChitra", type: "cultural" },
-        { name: "Craft Workshops", type: "educational" },
-        { name: "Community Lunch", type: "social" }
-      ]
-    },
-    {
-      day: 6,
-      date: "Oct 13",
-      location: "Coimbatore",
-      activities: [
-        { name: "Travel Day", type: "social" },
-        { name: "City Orientation", type: "educational" },
-        { name: "Evening Reflection", type: "reflection" }
-      ]
-    },
-    {
-      day: 7,
-      date: "Oct 14",
-      location: "Coimbatore",
-      activities: [
-        { name: "Isha Yoga Center", type: "cultural" },
-        { name: "Meditation Session", type: "reflection" },
-        { name: "Spiritual Dialogue", type: "social" }
-      ]
-    },
-    {
-      day: 8,
-      date: "Oct 15",
-      location: "Coimbatore",
-      activities: [
-        { name: "Textile Industry Visit", type: "educational" },
-        { name: "Manufacturing Tour", type: "educational" },
-        { name: "Economic Insights", type: "reflection" }
-      ]
-    },
-    {
-      day: 9,
-      date: "Oct 16",
-      location: "Coimbatore",
-      activities: [
-        { name: "Cultural Center", type: "cultural" },
-        { name: "Local Community", type: "social" },
-        { name: "Final Thoughts", type: "reflection" }
-      ]
-    },
-    {
-      day: 10,
-      date: "Oct 17",
-      location: "Coimbatore",
-      activities: [
-        { name: "Departure Prep", type: "social" },
-        { name: "Journey Summary", type: "reflection" },
-        { name: "Farewell Ceremony", type: "cultural" }
-      ]
+      day: 'goodbye-india',
+      label: 'Goodbye India'
     }
   ];
 
-  const getActivityColor = (type: Activity['type']) => {
-    switch (type) {
-      case 'cultural': return 'var(--saffron)';
-      case 'educational': return 'var(--green)';
-      case 'social': return 'var(--singapore-red)';
-      case 'reflection': return 'var(--navy)';
-      default: return 'var(--muted)';
-    }
-  };
-
-  const getActivityIcon = (type: Activity['type']) => {
-    switch (type) {
-      case 'cultural': return '🏛️';
-      case 'educational': return '📚';
-      case 'social': return '👥';
-      case 'reflection': return '✍️';
-      default: return '📍';
-    }
-  };
-
-  const handleDayClick = (day: number) => {
+  const handleDayClick = (day: number | string) => {
     const status = getDayStatus(day);
-    // Only allow navigation to posted entries
     if (status === 'posted') {
-      onNavigate('post', day);
+      if (typeof day === 'number') {
+        onNavigate('post', day);
+      } else if (day === 'goodbye-sg') {
+        onNavigate('post', 0);
+      } else if (day === 'goodbye-india') {
+        onNavigate('post', 11);
+      }
     }
   };
 
@@ -200,47 +87,8 @@ export function PlacesPage({ onNavigate }: PlacesPageProps) {
             
             {/* Descriptive subtitle */}
             <p style={{ color: 'var(--subtitle-color)' }}>
-              An 11-day journey from Singapore to South India, exploring Chennai and Coimbatore through cultural immersion, educational discoveries, and personal reflections (Oct 7-17, 2025).
+              A 10-day journey from Singapore to South India exploring Chennai and Coimbatore through cultural immersion, educational discoveries, and personal reflections.
             </p>
-            
-            {/* Integrated legend */}
-            <div className="flex flex-wrap justify-center items-center gap-4 mt-4">
-              <span className="small" style={{ color: 'var(--muted)', fontStyle: 'normal' }}>
-                Status:
-              </span>
-              <div className="flex items-center gap-1">
-                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--green)' }} />
-                <span className="small" style={{ color: 'var(--muted)', fontStyle: 'normal' }}>Posted</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--singapore-red)' }} />
-                <span className="small" style={{ color: 'var(--muted)', fontStyle: 'normal' }}>Planned</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--muted)' }} />
-                <span className="small" style={{ color: 'var(--muted)', fontStyle: 'normal' }}>Draft</span>
-              </div>
-              <span className="small mx-2" style={{ color: 'var(--border)' }}>•</span>
-              <span className="small" style={{ color: 'var(--muted)', fontStyle: 'normal' }}>
-                Activities:
-              </span>
-              <div className="flex items-center gap-1">
-                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--saffron)' }} />
-                <span className="small" style={{ color: 'var(--muted)', fontStyle: 'normal' }}>Cultural</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--green)' }} />
-                <span className="small" style={{ color: 'var(--muted)', fontStyle: 'normal' }}>Educational</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--singapore-red)' }} />
-                <span className="small" style={{ color: 'var(--muted)', fontStyle: 'normal' }}>Social</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--navy)' }} />
-                <span className="small" style={{ color: 'var(--muted)', fontStyle: 'normal' }}>Reflection</span>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -316,69 +164,16 @@ export function PlacesPage({ onNavigate }: PlacesPageProps) {
                 </div>
 
                 {/* Day Header */}
-                <div className="text-center mb-4">
-                  <div 
-                    className="text-2xl lg:text-3xl font-bold mb-1"
-                    style={{ 
-                      color: status === 'not-planned' ? 'var(--muted)' : 'var(--navy)',
+                <div className="text-center">
+                  <div
+                    className="text-2xl lg:text-3xl font-bold"
+                    style={{
+                      color: 'var(--navy)',
                       fontFamily: "'Cormorant Garamond', serif"
                     }}
                   >
-                    Day {dayData.day}
+                    {dayData.label}
                   </div>
-                  <div 
-                    className="small"
-                    style={{ 
-                      color: 'var(--muted)',
-                      fontStyle: 'normal',
-                      fontSize: '13px'
-                    }}
-                  >
-                    {dayData.date} • {dayData.location}
-                  </div>
-                </div>
-
-                {/* Activity Dots and Labels */}
-                <div className="space-y-2">
-                  {status === 'not-planned' ? (
-                    <div className="text-center py-4">
-                      <span 
-                        style={{ 
-                          fontSize: '12px',
-                          color: 'var(--muted)',
-                          fontFamily: "'Work Sans', system-ui, sans-serif",
-                          fontWeight: '400',
-                          fontStyle: 'italic'
-                        }}
-                      >
-                        Coming soon...
-                      </span>
-                    </div>
-                  ) : (
-                    dayData.activities.map((activity, idx) => (
-                      <div key={idx} className="flex items-center gap-2">
-                        <div 
-                          className="w-2 h-2 rounded-full flex-shrink-0"
-                          style={{ 
-                            backgroundColor: status === 'not-planned' ? 'var(--muted)' : getActivityColor(activity.type),
-                            opacity: status === 'not-planned' ? '0.5' : '1'
-                          }}
-                        />
-                        <span 
-                          className="text-left truncate"
-                          style={{ 
-                            fontSize: '12px',
-                            color: status === 'not-planned' ? 'var(--muted)' : 'var(--text)',
-                            fontFamily: "'Work Sans', system-ui, sans-serif",
-                            fontWeight: '400',
-                            fontStyle: 'normal'
-                          }}
-                        >
-                          {activity.name}
-                        </span>
-                      </div>
-                    ))
-                  )}
                 </div>
 
                 {/* Hover indicator */}
@@ -411,63 +206,19 @@ export function PlacesPage({ onNavigate }: PlacesPageProps) {
 
           {/* Journey Summary */}
           <div className="text-center mt-16 max-w-3xl mx-auto">
-            <h3 
+            <h3
               className="mb-4"
-              style={{ 
+              style={{
                 color: 'var(--navy)',
                 fontFamily: "'Cormorant Garamond', serif"
               }}
             >
-              Three Places, Eleven Days, Countless Discoveries
+              Two Cities, Ten Days, Countless Discoveries
             </h3>
-            <p style={{ color: 'var(--subtitle-color)' }}>
-              Click on any day to read detailed reflections, see photos, and explore the cultural insights gained during our immersive journey through Tamil Nadu's educational institutions, spiritual centers, and heritage sites.
-            </p>
           </div>
         </div>
       </section>
 
-      {/* Cities Overview */}
-      <section 
-        className="py-20"
-        style={{ backgroundColor: 'var(--subtle)' }}
-      >
-        <div className="container-desktop">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-            {/* Chennai */}
-            <div className="text-center">
-              <h4 
-                className="mb-4"
-                style={{ 
-                  color: 'var(--saffron)',
-                  fontFamily: "'Cormorant Garamond', serif"
-                }}
-              >
-                Chennai • Days 1-5
-              </h4>
-              <p style={{ color: 'var(--muted)' }}>
-                India's fourth-largest city, where ancient Tamil heritage meets modern innovation. Our base for exploring temples, museums, cultural centers, and academic institutions.
-              </p>
-            </div>
-
-            {/* Coimbatore */}
-            <div className="text-center">
-              <h4 
-                className="mb-4"
-                style={{ 
-                  color: 'var(--green)',
-                  fontFamily: "'Cormorant Garamond', serif"
-                }}
-              >
-                Coimbatore • Days 6-10
-              </h4>
-              <p style={{ color: 'var(--muted)' }}>
-                The Manchester of South India, balancing industrial significance with spiritual depth. Our window into textile manufacturing and meditation practices, concluding our journey.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

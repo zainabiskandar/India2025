@@ -7,11 +7,10 @@ import { DailyPostPage } from './pages/DailyPostPage';
 // import { LearningsPage } from './pages/LearningsPage';
 import { PlacesPage } from './pages/PlacesPage';
 import { AboutPage } from './pages/AboutPage';
-import { HandoffPage } from './pages/HandoffPage';
 import { PreTripPage } from './pages/PreTripPage';
 import { IndiaInfoPage } from './pages/IndiaInfoPage';
 
-type Page = 'home' | 'post' | 'places' | 'about' | 'handoff' | 'pretrip' | 'indiainfo';
+type Page = 'home' | 'post' | 'places' | 'about' | 'pretrip' | 'indiainfo';
 
 interface AppState {
   currentPage: Page;
@@ -47,8 +46,6 @@ export default function App() {
         return <PlacesPage onNavigate={handleNavigate} />;
       case 'about':
         return <AboutPage onNavigate={handleNavigate} />;
-      case 'handoff':
-        return <HandoffPage onNavigate={handleNavigate} />;
       case 'pretrip':
         return <PreTripPage onNavigate={handleNavigate} />;
       case 'indiainfo':

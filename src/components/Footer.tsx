@@ -118,7 +118,7 @@ export function Footer({ onNavigate }: FooterProps = {}) {
           {/* Supported By Section */}
           <div className="text-center md:text-right">
             <h4 className="mb-4" style={{ color: 'var(--green)' }}>Supported by</h4>
-            <div className="space-y-3">
+            <div className="space-y-1">
               <div><span className="small" style={{ color: 'var(--muted)', whiteSpace: 'nowrap' }}>Institute of South Asian Studies</span></div>
               <div><span className="small" style={{ color: 'var(--muted)', whiteSpace: 'nowrap' }}>Singapore-India Partnership Foundation</span></div>
               <div><span className="small" style={{ color: 'var(--muted)', whiteSpace: 'nowrap' }}>Confederation of Indian Industry</span></div>

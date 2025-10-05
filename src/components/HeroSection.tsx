@@ -64,7 +64,7 @@ export function HeroSection() {
             textShadow: '0 2px 8px rgba(0, 0, 0, 0.4)'
           }}
         >
-          Reflections from a participant in The India Experience Programme by SIPF and ISAS, NUS.
+          Reflections from a participant on the India Experience program organized by Singapore-India Partnership Foundation and Institute of South Asian Studies.
         </p>
       </div>
 

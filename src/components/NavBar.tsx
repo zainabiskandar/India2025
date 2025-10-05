@@ -24,8 +24,7 @@ export function NavBar({ currentPage, onNavigate }: NavBarProps) {
   
   const navItems = [
     { id: 'about', label: 'About' },
-    { id: 'places', label: 'Journal' },
-    { id: 'handoff', label: 'Reference' }
+    { id: 'places', label: 'Journal' }
   ];
 
   return (

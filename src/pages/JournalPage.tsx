@@ -3,7 +3,7 @@ import { BookOpen } from 'lucide-react';
 import { journalConfig, getDayStatus, isPublished } from '../data/journalConfig';
 import { ImageCarousel } from '../components/journal/ImageCarousel';
 
-interface PlacesPageProps {
+interface JournalPageProps {
   onNavigate: (page: string, day?: number) => void;
 }
 
@@ -12,7 +12,7 @@ interface DayData {
   label: string;
 }
 
-export function PlacesPage({ onNavigate }: PlacesPageProps) {
+export function JournalPage({ onNavigate }: JournalPageProps) {
   const journeyData: DayData[] = journalConfig;
 
   const handleDayClick = (day: number | string) => {

@@ -5,12 +5,12 @@ import { HomePage } from './pages/HomePage';
 import { DailyPostPage } from './pages/DailyPostPage';
 // ARCHIVED: LearningsPage moved to "Post-Trip Learnings (Archive)" frame for future use
 // import { LearningsPage } from './pages/LearningsPage';
-import { PlacesPage } from './pages/PlacesPage';
+import { JournalPage } from './pages/JournalPage';
 import { AboutPage } from './pages/AboutPage';
 import { PreTripPage } from './pages/PreTripPage';
 import { IndiaInfoPage } from './pages/IndiaInfoPage';
 
-type Page = 'home' | 'post' | 'places' | 'about' | 'pretrip' | 'indiainfo';
+type Page = 'home' | 'post' | 'journal' | 'about' | 'pretrip' | 'indiainfo';
 
 interface AppState {
   currentPage: Page;
@@ -42,8 +42,8 @@ export default function App() {
       // ARCHIVED: Learnings page removed from active navigation
       // case 'learnings':
       //   return <LearningsPage onNavigate={handleNavigate} />;
-      case 'places':
-        return <PlacesPage onNavigate={handleNavigate} />;
+      case 'journal':
+        return <JournalPage onNavigate={handleNavigate} />;
       case 'about':
         return <AboutPage onNavigate={handleNavigate} />;
       case 'pretrip':

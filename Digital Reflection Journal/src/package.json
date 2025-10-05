@@ -1,0 +1,53 @@
+{
+  "name": "student-reflections-india-2025",
+  "version": "1.0.0",
+  "description": "Mobile-first digital journal for The India Experience 2025 - Chennai & Coimbatore cultural immersion",
+  "keywords": [
+    "india",
+    "chennai", 
+    "coimbatore",
+    "cultural-exchange",
+    "educational-journal",
+    "singapore",
+    "south-india",
+    "student-reflections"
+  ],
+  "author": "Student Reflections Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/[your-username]/student-reflections-india-2025.git"
+  },
+  "homepage": "https://[your-username].github.io/student-reflections-india-2025",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,md}\""
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "lucide-react": "^0.263.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.3",
+    "tailwindcss": "^4.0.0",
+    "vite": "^4.4.5"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

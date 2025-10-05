@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Send } from 'lucide-react';
 
 interface FooterProps {
   onNavigate?: (page: string) => void;
 }
 
 export function Footer({ onNavigate }: FooterProps = {}) {
-  const handleNavClick = (page: string) => {
-    if (onNavigate) {
-      onNavigate(page);
+  const [email, setEmail] = useState('');
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      console.log('New subscription:', email);
+      // TODO: Add backend integration here
+      alert(`Thank you for subscribing! We'll send updates to ${email}`);
+      setEmail('');
     }
   };
 
@@ -35,79 +42,43 @@ export function Footer({ onNavigate }: FooterProps = {}) {
             </p>
           </div>
 
-          {/* Navigation Links - Now Clickable */}
+          {/* Subscription Section */}
           <div className="text-center">
-            <h4 className="mb-4" style={{ color: 'var(--saffron)' }}>Navigation</h4>
-            <div className="space-y-3">
-              <div>
-                <button 
-                  onClick={() => handleNavClick('about')}
-                  className="small hover:underline transition-colors duration-200 cursor-pointer"
-                  style={{ 
-                    color: 'var(--muted)',
-                    fontStyle: 'normal',
-                    background: 'none',
-                    border: 'none',
-                    padding: 0
+            <h4 className="mb-4" style={{ color: 'var(--saffron)', fontSize: '1.1rem' }}>
+              Get Daily Updates
+            </h4>
+            <form onSubmit={handleSubscribe} className="space-y-3">
+              <div className="flex flex-col sm:flex-row gap-2 justify-center items-center">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  required
+                  className="small px-4 py-2 rounded-md border transition-colors duration-200 w-full sm:w-64"
+                  style={{
+                    borderColor: 'var(--border)',
+                    backgroundColor: 'white',
+                    color: 'var(--text)'
                   }}
-                  onMouseEnter={(e) => e.target.style.color = 'var(--navy)'}
-                  onMouseLeave={(e) => e.target.style.color = 'var(--muted)'}
+                  onFocus={(e) => e.target.style.borderColor = 'var(--saffron)'}
+                  onBlur={(e) => e.target.style.borderColor = 'var(--border)'}
+                />
+                <button
+                  type="submit"
+                  className="px-4 py-2 rounded-md transition-all duration-200 flex items-center gap-2 hover:opacity-90"
+                  style={{
+                    backgroundColor: 'var(--saffron)',
+                    color: 'white',
+                    border: 'none',
+                    cursor: 'pointer'
+                  }}
+                  aria-label="Subscribe to daily updates"
                 >
-                  About
+                  <Send size={16} />
                 </button>
               </div>
-              <div>
-                <button 
-                  onClick={() => handleNavClick('pretrip')}
-                  className="small hover:underline transition-colors duration-200 cursor-pointer"
-                  style={{ 
-                    color: 'var(--muted)',
-                    fontStyle: 'normal',
-                    background: 'none',
-                    border: 'none',
-                    padding: 0
-                  }}
-                  onMouseEnter={(e) => e.target.style.color = 'var(--navy)'}
-                  onMouseLeave={(e) => e.target.style.color = 'var(--muted)'}
-                >
-                  Pre-Trip Info
-                </button>
-              </div>
-              <div>
-                <button 
-                  onClick={() => handleNavClick('places')}
-                  className="small hover:underline transition-colors duration-200 cursor-pointer"
-                  style={{ 
-                    color: 'var(--muted)',
-                    fontStyle: 'normal',
-                    background: 'none',
-                    border: 'none',
-                    padding: 0
-                  }}
-                  onMouseEnter={(e) => e.target.style.color = 'var(--navy)'}
-                  onMouseLeave={(e) => e.target.style.color = 'var(--muted)'}
-                >
-                  Journal
-                </button>
-              </div>
-              <div>
-                <button 
-                  onClick={() => handleNavClick('home')}
-                  className="small hover:underline transition-colors duration-200 cursor-pointer"
-                  style={{ 
-                    color: 'var(--muted)',
-                    fontStyle: 'normal',
-                    background: 'none',
-                    border: 'none',
-                    padding: 0
-                  }}
-                  onMouseEnter={(e) => e.target.style.color = 'var(--navy)'}
-                  onMouseLeave={(e) => e.target.style.color = 'var(--muted)'}
-                >
-                  Journal
-                </button>
-              </div>
-            </div>
+            </form>
           </div>
 
           {/* Supported By Section */}

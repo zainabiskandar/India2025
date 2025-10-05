@@ -33,21 +33,18 @@ export function PlacesPage({ onNavigate }: PlacesPageProps) {
       <section className="py-20" style={{ backgroundColor: 'var(--green)/10' }}>
         <div className="container-desktop">
           <div className="text-center max-w-4xl mx-auto">
-            {/* Large prominent title with decorative icon */}
-            <div className="text-center mb-6">
-              <h1 style={{ color: 'var(--navy)' }}>
-                Journal
-              </h1>
+            {/* Header */}
+            <h1 className="mb-4" style={{ color: 'var(--navy)' }}>
+              Travel Journal
+            </h1>
+            <div className="flex justify-center items-center gap-3 mb-6">
+              <span className="text-2xl">✍🏻</span>
+              <div className="w-16 h-px" style={{ backgroundColor: 'var(--saffron)' }}></div>
+              <span className="text-2xl">📖</span>
             </div>
-            
-            {/* Horizontal divider */}
-            <div 
-              className="w-24 h-1 mx-auto mb-6 rounded-full"
-              style={{ backgroundColor: 'var(--divider-color)' }}
-            />
-            
+
             {/* Descriptive subtitle */}
-            <p style={{ color: 'var(--subtitle-color)' }}>
+            <p className="max-w-2xl mx-auto" style={{ color: 'var(--muted)' }}>
               A 10-day journey from Singapore to South India exploring Chennai and Coimbatore through cultural immersion, educational discoveries, and personal reflections.
             </p>
           </div>

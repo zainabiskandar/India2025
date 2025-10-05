@@ -28,28 +28,23 @@ export function Footer({ onNavigate }: FooterProps = {}) {
     setFeedback('Sending…');
 
     try {
-      const fd = new FormData();
-      fd.append('email', email);
-      fd.append('source', 'footer');
-      fd.append('user_agent', navigator.userAgent);
+      const params = new URLSearchParams();
+      params.append('email', email);
+      params.append('source', 'footer');
+      params.append('user_agent', navigator.userAgent);
 
       const res = await fetch(GAS_ENDPOINT, {
         method: 'POST',
-        body: fd,
-        mode: 'cors',
-        redirect: 'follow'
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: params.toString(),
+        mode: 'no-cors'
       });
 
-      let data: any = {};
-      try { data = await res.json(); } catch (_) {}
-
-      console.log('[subscribe] status:', res.status, 'body:', data);
-      if (res.ok && data && (data.ok === true || data.ok === 'true')) {
-        setFeedback(data.dup ? 'You are already subscribed. Thank you!' : 'Thanks! Please check your inbox.');
-        setEmail('');
-      } else {
-        setFeedback('Sorry, something went wrong. Please try again.');
-      }
+      console.log('[subscribe] request sent (no-cors mode)');
+      setFeedback('Thanks! Please check your inbox.');
+      setEmail('');
     } catch (err) {
       console.error('[subscribe] network error:', err);
       setFeedback('Network error. Please try again.');

@@ -1,20 +1,56 @@
-import React, { useState } from 'react';
-import { Send } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
 
 interface FooterProps {
   onNavigate?: (page: string) => void;
 }
 
+const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxxr2mdfCpqLg38vhAXCeILHs6_njNFeSgB9Lwu7bBYG8HlupstkSgUeuNA2XtBzP3fwQ/exec';
+
+function validEmail(v: string): boolean {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+}
+
 export function Footer({ onNavigate }: FooterProps = {}) {
   const [email, setEmail] = useState('');
+  const [feedback, setFeedback] = useState('');
+  const [trap, setTrap] = useState('');
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      console.log('New subscription:', email);
-      // TODO: Add backend integration here
-      alert(`Thank you for subscribing! We'll send updates to ${email}`);
-      setEmail('');
+
+    if (trap) return; // ignore bots
+
+    if (!validEmail(email)) {
+      setFeedback('Please enter a valid email.');
+      return;
+    }
+
+    setFeedback('Sending…');
+
+    try {
+      const res = await fetch(GAS_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          email,
+          source: 'footer',
+          user_agent: navigator.userAgent
+        })
+      });
+
+      const data = await res.json().catch(() => ({}));
+
+      if (res.ok && data && data.ok) {
+        setFeedback(data.dup ? 'You are already subscribed. Thank you!' : 'Thanks! Please check your inbox.');
+        setEmail('');
+      } else {
+        setFeedback('Sorry, something went wrong. Please try again.');
+      }
+    } catch {
+      setFeedback('Network error. Please try again.');
     }
   };
 
@@ -43,43 +79,46 @@ export function Footer({ onNavigate }: FooterProps = {}) {
           </div>
 
           {/* Subscription Section */}
-          <div className="text-center">
-            <h4 className="mb-4" style={{ color: 'var(--saffron)', fontSize: '1.1rem' }}>
+          <section id="subscribe" className="text-center subscribe-section">
+            <h4 className="mb-4 footer-heading" style={{ color: 'var(--navy)' }}>
               Get Daily Updates
             </h4>
-            <form onSubmit={handleSubscribe} className="space-y-3">
-              <div className="flex flex-col sm:flex-row gap-2 justify-center items-center">
+            <form id="subscribe-form" className="subscribe-form" method="POST" noValidate onSubmit={handleSubscribe}>
+              <div className="subscribe-row">
                 <input
+                  id="subscribe-email"
                   type="email"
+                  name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
                   required
-                  className="small px-4 py-2 rounded-md border transition-colors duration-200 w-full sm:w-64"
-                  style={{
-                    borderColor: 'var(--border)',
-                    backgroundColor: 'white',
-                    color: 'var(--text)'
-                  }}
-                  onFocus={(e) => e.target.style.borderColor = 'var(--saffron)'}
-                  onBlur={(e) => e.target.style.borderColor = 'var(--border)'}
+                  aria-label="Email address"
+                  className="subscribe-input"
                 />
                 <button
                   type="submit"
-                  className="px-4 py-2 rounded-md transition-all duration-200 flex items-center gap-2 hover:opacity-90"
-                  style={{
-                    backgroundColor: 'var(--saffron)',
-                    color: 'white',
-                    border: 'none',
-                    cursor: 'pointer'
-                  }}
-                  aria-label="Subscribe to daily updates"
+                  className="subscribe-btn"
+                  aria-label="Send"
+                  style={{ fontStyle: 'normal' }}
                 >
-                  <Send size={16} />
+                  <span aria-hidden="true">✈️</span> Send
                 </button>
               </div>
+              <p id="subscribe-feedback" className="subscribe-feedback" role="status" aria-live="polite">
+                {feedback}
+              </p>
+              <input
+                type="text"
+                name="trap"
+                className="visually-hidden"
+                tabIndex={-1}
+                autoComplete="off"
+                value={trap}
+                onChange={(e) => setTrap(e.target.value)}
+              />
             </form>
-          </div>
+          </section>
 
           {/* Supported By Section */}
           <div className="text-center md:text-right">

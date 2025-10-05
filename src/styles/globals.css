@@ -444,6 +444,98 @@
     width: var(--icon-xl);
     height: var(--icon-xl);
   }
+
+  /* Subscription form styles */
+  .subscribe-section {
+    /* inherits text-center from parent */
+  }
+
+  .footer-heading {
+    /* matches other footer h4 elements */
+  }
+
+  .subscribe-form {
+    /* form wrapper */
+  }
+
+  .subscribe-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+
+  .subscribe-input {
+    width: min(420px, 70vw);
+    padding: 10px 12px;
+    border: 1px solid var(--border, #E5E7EB);
+    border-radius: 10px;
+    font-family: 'Work Sans', system-ui, sans-serif;
+    font-size: var(--body);
+    line-height: var(--body-lh);
+    font-weight: 400;
+    background-color: white;
+    color: var(--text);
+  }
+
+  .subscribe-input:focus {
+    outline: 3px solid rgba(11, 95, 165, 0.4);
+    outline-offset: 2px;
+    border-color: var(--navy);
+  }
+
+  .subscribe-btn {
+    padding: 10px 16px;
+    background: var(--saffron, #F6C182);
+    color: var(--navy, #1A1A2E);
+    border: 0;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: 'Work Sans', system-ui, sans-serif;
+    font-size: var(--small);
+    font-weight: 600;
+    transition: filter 0.2s ease;
+  }
+
+  .subscribe-btn:hover {
+    filter: brightness(0.97);
+  }
+
+  .subscribe-btn:focus {
+    outline: 3px solid rgba(26, 26, 46, 0.4);
+    outline-offset: 2px;
+  }
+
+  .subscribe-feedback {
+    margin-top: 8px;
+    text-align: center;
+    color: var(--grey, #717171);
+    min-height: 1.2em;
+    font-family: 'Work Sans', system-ui, sans-serif;
+    font-size: var(--small);
+    font-style: italic;
+  }
+
+  .visually-hidden {
+    position: absolute !important;
+    left: -9999px !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+  }
+
+  @media (max-width: 480px) {
+    .subscribe-row {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .subscribe-input,
+    .subscribe-btn {
+      width: 100%;
+    }
+  }
 }
 
 html {

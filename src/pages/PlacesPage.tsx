@@ -30,7 +30,7 @@ export function PlacesPage({ onNavigate }: PlacesPageProps) {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[var(--green)]/5 to-white">
       {/* Consistent Header Section */}
-      <section className="py-20" style={{ backgroundColor: 'var(--green)/10' }}>
+      <section className="py-12" style={{ backgroundColor: 'var(--green)/10' }}>
         <div className="container-desktop">
           <div className="text-center max-w-4xl mx-auto">
             {/* Header */}

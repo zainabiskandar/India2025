@@ -25,20 +25,20 @@ export function Tag({ children, variant = 'secondary' }: TagProps) {
 
 interface DayChipProps {
   day: number;
-  status: 'planned' | 'posted';
+  status: 'published' | 'planned' | 'not-planned';
   onClick?: () => void;
 }
 
 export function DayChip({ day, status, onClick }: DayChipProps) {
-  const isPosted = status === 'posted';
-  
+  const isPublished = status === 'published';
+
   return (
     <button
       onClick={onClick}
-      className={`day-chip ${isPosted ? 'day-chip-posted' : 'day-chip-planned'} ${onClick ? 'hover:opacity-80' : ''}`}
+      className={`day-chip ${isPublished ? 'day-chip-posted' : 'day-chip-planned'} ${onClick ? 'hover:opacity-80' : ''}`}
       disabled={!onClick}
     >
-      <span className={`status-dot ${isPosted ? 'status-dot-posted' : 'status-dot-planned'}`} />
+      <span className={`status-dot ${isPublished ? 'status-dot-posted' : 'status-dot-planned'}`} />
       Day {day}
     </button>
   );

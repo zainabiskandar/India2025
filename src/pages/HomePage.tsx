@@ -1,25 +1,20 @@
 import React from 'react';
 import { DayChip } from '../components/Tag';
-import { HeroSection } from '../components/HeroSection';
+import { HeroSection } from '../components/layout/HeroSection';
+import { ImageCarousel } from '../components/journal/ImageCarousel';
+import { journalConfig } from '../data/journalConfig';
 
 interface HomePageProps {
   onNavigate: (page: string, day?: number) => void;
 }
 
 export function HomePage({ onNavigate }: HomePageProps) {
-  // Mock data for day status
-  const dayStatuses = [
-    { day: 1, status: 'posted' as const },
-    { day: 2, status: 'posted' as const },
-    { day: 3, status: 'posted' as const },
-    { day: 4, status: 'planned' as const },
-    { day: 5, status: 'planned' as const },
-    { day: 6, status: 'planned' as const },
-    { day: 7, status: 'planned' as const },
-    { day: 8, status: 'planned' as const },
-    { day: 9, status: 'planned' as const },
-    { day: 10, status: 'planned' as const },
-  ];
+  const dayStatuses = journalConfig
+    .filter(config => typeof config.day === 'number')
+    .map(config => ({
+      day: config.day as number,
+      status: config.status
+    }));
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: 'var(--bg)' }}>
@@ -72,11 +67,11 @@ export function HomePage({ onNavigate }: HomePageProps) {
           
           <div className="flex flex-wrap gap-3">
             {dayStatuses.map(({ day, status }) => (
-              <DayChip 
+              <DayChip
                 key={day}
-                day={day} 
+                day={day}
                 status={status}
-                onClick={status === 'posted' ? () => onNavigate('post', day) : undefined}
+                onClick={status === 'published' ? () => onNavigate('post', day) : undefined}
               />
             ))}
           </div>
@@ -97,6 +92,30 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </div>
       </section>
 
+      {/* Tagline */}
+      <section className="container-mobile md:container-desktop mb-12">
+        <div className="text-center max-w-3xl mx-auto">
+          <h3
+            style={{
+              color: 'var(--navy)',
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: 'var(--h3)',
+              fontWeight: '600',
+              fontStyle: 'italic',
+              marginBottom: '3rem'
+            }}
+          >
+            Two Cities, Ten Days, Countless Discoveries
+          </h3>
+        </div>
+      </section>
+
+      {/* Image Carousel Section */}
+      <section className="container-mobile md:container-desktop mb-16">
+        <div className="max-w-6xl mx-auto">
+          <ImageCarousel />
+        </div>
+      </section>
 
     </div>
   );

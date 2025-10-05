@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button } from './ui/button';
-import { Card, CardContent } from './ui/card';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { Button } from '../ui/button';
+import { Card, CardContent } from '../ui/card';
+import { ImageWithFallback } from '../figma/ImageWithFallback';
 
 interface PostCardProps {
   title: string;
@@ -68,10 +68,9 @@ export function PostCard({
             >
               {date}
             </p>
-            <p 
-              className="mb-4 flex-1"
-              className="caption"
-              style={{ 
+            <p
+              className="caption mb-4 flex-1"
+              style={{
                 color: 'var(--muted)'
               }}
             >
@@ -81,10 +80,9 @@ export function PostCard({
             {tags.length > 0 && (
               <div className="flex flex-wrap gap-2 mb-4">
                 {tags.map((tag, index) => (
-                  <span 
+                  <span
                     key={index}
-                    className="px-2 py-1 rounded small"
-                    className="caption"
+                    className="caption px-2 py-1 rounded"
                     style={{
                       backgroundColor: 'var(--subtle)',
                       color: 'var(--muted)'
@@ -97,12 +95,11 @@ export function PostCard({
             )}
           </div>
           
-          <Button 
-            variant="outline" 
-            size="sm" 
+          <Button
+            variant="outline"
+            size="sm"
             onClick={onReadPost}
-            className="self-start mt-auto border transition-colors focus:outline-none focus:ring-2 focus:ring-opacity-50"
-            className="ui-text"
+            className="ui-text self-start mt-auto border transition-colors focus:outline-none focus:ring-2 focus:ring-opacity-50"
             style={{
               borderColor: 'var(--border)',
               color: 'var(--text)',

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { NavBar } from './components/NavBar';
-import { Footer } from './components/Footer';
+import { NavBar } from './components/layout/NavBar';
+import { Footer } from './components/layout/Footer';
 import { HomePage } from './pages/HomePage';
 import { DailyPostPage } from './pages/DailyPostPage';
 // ARCHIVED: LearningsPage moved to "Post-Trip Learnings (Archive)" frame for future use

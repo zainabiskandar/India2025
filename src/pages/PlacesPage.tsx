@@ -1,5 +1,6 @@
 import React from 'react';
 import { BookOpen } from 'lucide-react';
+import { journalConfig, getDayStatus, isPublished } from '../data/journalConfig';
 
 interface PlacesPageProps {
   onNavigate: (page: string, day?: number) => void;
@@ -11,51 +12,10 @@ interface DayData {
 }
 
 export function PlacesPage({ onNavigate }: PlacesPageProps) {
-  // Define post status for each day
-  const dayStatuses = [
-    { day: 'goodbye-sg', status: 'posted' as const },
-    { day: 1, status: 'planned' as const },
-    { day: 2, status: 'planned' as const },
-    { day: 3, status: 'planned' as const },
-    { day: 4, status: 'planned' as const },
-    { day: 5, status: 'planned' as const },
-    { day: 6, status: 'planned' as const },
-    { day: 7, status: 'planned' as const },
-    { day: 8, status: 'planned' as const },
-    { day: 9, status: 'planned' as const },
-    { day: 10, status: 'planned' as const },
-    { day: 'goodbye-india', status: 'planned' as const }
-  ];
-
-  const getDayStatus = (day: number | string) => {
-    const statusEntry = dayStatuses.find(s => s.day === day);
-    return statusEntry?.status || 'planned';
-  };
-
-  const journeyData: DayData[] = [
-    {
-      day: 'goodbye-sg',
-      label: 'Goodbye Singapore'
-    },
-    { day: 1, label: 'Day 1' },
-    { day: 2, label: 'Day 2' },
-    { day: 3, label: 'Day 3' },
-    { day: 4, label: 'Day 4' },
-    { day: 5, label: 'Day 5' },
-    { day: 6, label: 'Day 6' },
-    { day: 7, label: 'Day 7' },
-    { day: 8, label: 'Day 8' },
-    { day: 9, label: 'Day 9' },
-    { day: 10, label: 'Day 10' },
-    {
-      day: 'goodbye-india',
-      label: 'Goodbye India'
-    }
-  ];
+  const journeyData: DayData[] = journalConfig;
 
   const handleDayClick = (day: number | string) => {
-    const status = getDayStatus(day);
-    if (status === 'posted') {
+    if (isPublished(day)) {
       if (typeof day === 'number') {
         onNavigate('post', day);
       } else if (day === 'goodbye-sg') {
@@ -101,7 +61,7 @@ export function PlacesPage({ onNavigate }: PlacesPageProps) {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6 max-w-6xl mx-auto">
             {journeyData.map((dayData) => {
               const status = getDayStatus(dayData.day);
-              const isClickable = status === 'posted';
+              const isClickable = status === 'published';
               
               return (
                 <button
@@ -110,12 +70,12 @@ export function PlacesPage({ onNavigate }: PlacesPageProps) {
                   className={`group relative border rounded-xl p-4 lg:p-6 transition-all duration-300 focus:outline-none focus:ring-3 focus:ring-navy/20 ${
                     isClickable ? 'cursor-pointer hover:shadow-xl' : 'cursor-not-allowed'
                   }`}
-                  style={{ 
-                    backgroundColor: status === 'posted' ? 'white' : 
-                                    status === 'planned' ? 'var(--planned-bg)' : 
+                  style={{
+                    backgroundColor: status === 'published' ? 'white' :
+                                    status === 'planned' ? 'var(--planned-bg)' :
                                     'var(--subtle)',
-                    borderColor: status === 'posted' ? 'var(--border)' : 
-                                status === 'planned' ? 'var(--singapore-red)' : 
+                    borderColor: status === 'published' ? 'var(--border)' :
+                                status === 'planned' ? 'var(--singapore-red)' :
                                 'var(--border)',
                     borderWidth: status === 'planned' ? '2px' : '1px',
                     opacity: status === 'not-planned' ? '0.6' : '1',
@@ -137,13 +97,13 @@ export function PlacesPage({ onNavigate }: PlacesPageProps) {
                 >
                 {/* Status Badge */}
                 <div className="absolute top-3 right-3">
-                  <div 
+                  <div
                     className="flex items-center gap-1 px-2 py-1 rounded-full text-xs"
                     style={{
-                      backgroundColor: status === 'posted' ? 'var(--posted-bg)' :
+                      backgroundColor: status === 'published' ? 'var(--posted-bg)' :
                                       status === 'planned' ? 'var(--planned-bg)' :
                                       'var(--subtle)',
-                      color: status === 'posted' ? 'var(--green)' :
+                      color: status === 'published' ? 'var(--green)' :
                              status === 'planned' ? 'var(--singapore-red)' :
                              'var(--muted)',
                       fontSize: '10px',
@@ -151,15 +111,15 @@ export function PlacesPage({ onNavigate }: PlacesPageProps) {
                       fontFamily: "'Work Sans', system-ui, sans-serif"
                     }}
                   >
-                    <span 
+                    <span
                       className="w-1.5 h-1.5 rounded-full"
                       style={{
-                        backgroundColor: status === 'posted' ? 'var(--green)' :
+                        backgroundColor: status === 'published' ? 'var(--green)' :
                                         status === 'planned' ? 'var(--singapore-red)' :
                                         'var(--muted)'
                       }}
                     />
-                    {status === 'posted' ? 'Posted' : status === 'planned' ? 'Planned' : 'Draft'}
+                    {status === 'published' ? 'Posted' : status === 'planned' ? 'Planned' : 'Draft'}
                   </div>
                 </div>
 

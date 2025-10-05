@@ -15,28 +15,28 @@ export function ImageCarousel({ className = '' }: ImageCarouselProps) {
   const placeholderImages = [
     {
       id: 1,
-      alt: 'Placeholder for journey photo 1',
-      bgColor: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+      url: 'https://images.pexels.com/photos/2098427/pexels-photo-2098427.jpeg?auto=compress&cs=tinysrgb&w=800',
+      alt: 'Traditional Indian temple architecture'
     },
     {
       id: 2,
-      alt: 'Placeholder for journey photo 2',
-      bgColor: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+      url: 'https://images.pexels.com/photos/3889751/pexels-photo-3889751.jpeg?auto=compress&cs=tinysrgb&w=800',
+      alt: 'Colorful traditional Indian market scene'
     },
     {
       id: 3,
-      alt: 'Placeholder for journey photo 3',
-      bgColor: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
+      url: 'https://images.pexels.com/photos/3209049/pexels-photo-3209049.jpeg?auto=compress&cs=tinysrgb&w=800',
+      alt: 'South Indian cultural heritage'
     },
     {
       id: 4,
-      alt: 'Placeholder for journey photo 4',
-      bgColor: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)'
+      url: 'https://images.pexels.com/photos/2318370/pexels-photo-2318370.jpeg?auto=compress&cs=tinysrgb&w=800',
+      alt: 'Traditional Indian architecture detail'
     },
     {
       id: 5,
-      alt: 'Placeholder for journey photo 5',
-      bgColor: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)'
+      url: 'https://images.pexels.com/photos/1571453/pexels-photo-1571453.jpeg?auto=compress&cs=tinysrgb&w=800',
+      alt: 'Indian cultural landscape'
     }
   ];
 
@@ -53,28 +53,40 @@ export function ImageCarousel({ className = '' }: ImageCarouselProps) {
           {placeholderImages.map((image) => (
             <CarouselItem key={image.id} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
               <div
-                className="relative aspect-[4/3] rounded-lg overflow-hidden flex items-center justify-center"
+                className="relative aspect-[4/3] rounded-lg overflow-hidden"
                 style={{
-                  background: image.bgColor,
-                  border: '1px solid var(--border)'
+                  border: '1px solid var(--border)',
+                  backgroundColor: 'var(--subtle)'
                 }}
               >
-                <div className="text-center px-6">
-                  <div
-                    className="text-4xl mb-3"
-                    style={{ opacity: 0.5 }}
-                  >
-                    📷
-                  </div>
+                <img
+                  src={image.url}
+                  alt={image.alt}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                  style={{
+                    opacity: 0.85,
+                    transition: 'opacity 0.3s ease'
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.opacity = '1'}
+                  onMouseLeave={(e) => e.currentTarget.style.opacity = '0.85'}
+                />
+                <div
+                  className="absolute bottom-0 left-0 right-0 p-3"
+                  style={{
+                    background: 'linear-gradient(to top, rgba(0,0,0,0.6), transparent)',
+                  }}
+                >
                   <p
-                    className="text-sm"
+                    className="text-xs"
                     style={{
                       color: 'rgba(255, 255, 255, 0.9)',
                       fontFamily: "'Work Sans', system-ui, sans-serif",
-                      fontWeight: '500'
+                      fontWeight: '400',
+                      fontStyle: 'italic'
                     }}
                   >
-                    Journey memories will be added here
+                    Placeholder - Journey photos coming soon
                   </p>
                 </div>
               </div>

@@ -6,7 +6,7 @@ interface AboutPageProps {
 
 export function AboutPage({ onNavigate }: AboutPageProps) {
   return (
-    <div className="min-h-screen py-16 bg-gradient-to-b from-[var(--navy)]/5 to-white">
+    <div className="min-h-screen py-12 bg-gradient-to-b from-[var(--navy)]/5 to-white">
       <div className="container-mobile md:container-desktop">
         <div className="max-w-4xl mx-auto">
 

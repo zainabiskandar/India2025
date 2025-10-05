@@ -18,7 +18,7 @@ export function Footer({ onNavigate }: FooterProps = {}) {
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (trap) return; // ignore bots
+    if (trap) return; // honeypot
 
     if (!validEmail(email)) {
       setFeedback('Please enter a valid email.');
@@ -28,28 +28,30 @@ export function Footer({ onNavigate }: FooterProps = {}) {
     setFeedback('Sending…');
 
     try {
+      const fd = new FormData();
+      fd.append('email', email);
+      fd.append('source', 'footer');
+      fd.append('user_agent', navigator.userAgent);
+
       const res = await fetch(GAS_ENDPOINT, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          email,
-          source: 'footer',
-          user_agent: navigator.userAgent
-        })
+        body: fd,
+        mode: 'cors',
+        redirect: 'follow'
       });
 
-      const data = await res.json().catch(() => ({}));
+      let data: any = {};
+      try { data = await res.json(); } catch (_) {}
 
-      if (res.ok && data && data.ok) {
+      console.log('[subscribe] status:', res.status, 'body:', data);
+      if (res.ok && data && (data.ok === true || data.ok === 'true')) {
         setFeedback(data.dup ? 'You are already subscribed. Thank you!' : 'Thanks! Please check your inbox.');
         setEmail('');
       } else {
         setFeedback('Sorry, something went wrong. Please try again.');
       }
-    } catch {
+    } catch (err) {
+      console.error('[subscribe] network error:', err);
       setFeedback('Network error. Please try again.');
     }
   };
@@ -98,11 +100,12 @@ export function Footer({ onNavigate }: FooterProps = {}) {
                 />
                 <button
                   type="submit"
-                  className="subscribe-btn"
-                  aria-label="Send"
-                  style={{ fontStyle: 'normal' }}
+                  className="subscribe-btn subscribe-btn--icon"
+                  aria-label="Subscribe"
                 >
-                  <span aria-hidden="true">✈️</span> Send
+                  <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor">
+                    <path d="M2.5 12l18.5-9-4.5 9 4.5 9-18.5-9zm7 .5l7.5 4.5-7.5-1.5v-3z"/>
+                  </svg>
                 </button>
               </div>
               <p id="subscribe-feedback" className="subscribe-feedback" role="status" aria-live="polite">

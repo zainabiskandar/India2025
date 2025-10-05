@@ -469,20 +469,26 @@
   .subscribe-input {
     width: min(420px, 70vw);
     padding: 10px 12px;
-    border: 1px solid var(--border, #E5E7EB);
-    border-radius: 10px;
+    border: 2px solid var(--saffron, #F6C182);
+    border-radius: 12px;
+    background: #fff;
+    color: var(--text, #1A1A2E);
     font-family: 'Work Sans', system-ui, sans-serif;
     font-size: var(--body);
     line-height: var(--body-lh);
     font-weight: 400;
-    background-color: white;
-    color: var(--text);
+  }
+
+  .subscribe-input::placeholder {
+    font-size: var(--body, 16px);
+    color: var(--grey, #717171);
+    opacity: 0.9;
   }
 
   .subscribe-input:focus {
-    outline: 3px solid rgba(11, 95, 165, 0.4);
-    outline-offset: 2px;
-    border-color: var(--navy);
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(246, 193, 130, 0.35);
+    border-color: var(--saffron, #F6C182);
   }
 
   .subscribe-btn {
@@ -492,10 +498,19 @@
     border: 0;
     border-radius: 12px;
     cursor: pointer;
-    font-family: 'Work Sans', system-ui, sans-serif;
-    font-size: var(--small);
-    font-weight: 600;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 48px;
+    min-height: 44px;
     transition: filter 0.2s ease;
+  }
+
+  .subscribe-btn--icon {
+    width: 48px;
+    padding: 10px;
   }
 
   .subscribe-btn:hover {

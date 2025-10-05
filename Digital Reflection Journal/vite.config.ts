@@ -4,6 +4,7 @@
   import path from 'path';
 
   export default defineConfig({
+    base: '/India2025/',      // <-- IMPORTANT: your repo name
     plugins: [react()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],

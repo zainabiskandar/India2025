@@ -25,14 +25,17 @@ export function Footer({ onNavigate }: FooterProps = {}) {
           {/* Logo & Mission */}
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
-              <span className="text-xl">🇸🇬</span>
-              <span className="text-xl">🇮🇳</span>
+              <span className="text-xl" style={{ fontStyle: 'normal' }}>🇸🇬</span>
+              <span className="text-xl" style={{ fontStyle: 'normal' }}>🇮🇳</span>
             </div>
             <h4 className="mb-3" style={{ color: 'var(--navy)' }}>
               The India Experience 2025
             </h4>
             <p className="small" style={{ color: 'var(--muted)' }}>
               A cross-cultural learning journey fostering understanding between Singapore and India.
+            </p>
+            <p className="small mt-2" style={{ color: 'var(--muted)' }}>
+              © 2025 Reflections by Zainab Iskandar
             </p>
           </div>
 
@@ -128,13 +131,6 @@ export function Footer({ onNavigate }: FooterProps = {}) {
           <p className="tamil mb-2">கல்வி என்பது கற்றதை மற்றவர்களுடன் பகிர்ந்து கொள்வதே</p>
           <p className="small" style={{ color: 'var(--muted)' }}>
             "Education is sharing what we learn with others"
-          </p>
-        </div>
-
-        {/* Copyright & Credit */}
-        <div className="text-center pt-6 border-t" style={{ borderColor: 'var(--border)' }}>
-          <p className="small" style={{ color: 'var(--muted)' }}>
-            © 2025 The India Experience — Reflections by Zainab Iskandar — Built with care for cross-cultural understanding
           </p>
         </div>
       </div>

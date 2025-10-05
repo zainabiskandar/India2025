@@ -72,22 +72,22 @@ export function NavBar({ currentPage, onNavigate }: NavBarProps) {
             
             {/* Flags */}
             <div className="flex items-center gap-3">
-              <button 
+              <button
                 onClick={() => onNavigate('pretrip')}
-                className="flex items-center transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-opacity-50 rounded-sm p-1" 
+                className="flex items-center transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-opacity-50 rounded-sm p-1"
                 style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.2))' }}
                 aria-label="Singapore Pre-Trip Preparation"
               >
-                <span className="text-xl">🇸🇬</span>
+                <span className="text-xl" style={{ fontStyle: 'normal' }}>🇸🇬</span>
               </button>
-              
-              <button 
+
+              <button
                 onClick={() => onNavigate('indiainfo')}
-                className="flex items-center transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-opacity-50 rounded-sm p-1" 
+                className="flex items-center transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-opacity-50 rounded-sm p-1"
                 style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.2))' }}
                 aria-label="About India"
               >
-                <span className="text-xl">🇮🇳</span>
+                <span className="text-xl" style={{ fontStyle: 'normal' }}>🇮🇳</span>
               </button>
               
               <div 

@@ -86,25 +86,13 @@ export function HomePage({ onNavigate }: HomePageProps) {
       {/* Intro Paragraph Section */}
       <section className="container-mobile md:container-desktop mb-16" style={{ marginTop: '2rem' }}>
         <div className="text-center max-w-3xl mx-auto">
-          <p 
+          <p
             style={{
               color: 'var(--subtitle-color)',
               marginBottom: '16px'
             }}
           >
-            This journal captures reflections from The India Experience 2025, a 10-day immersion in Tamil Nadu. Through visits to universities, industries, and cultural sites, we learn not only about India's innovation and heritage, but about ourselves and what connects us across borders.
-          </p>
-          <p 
-            style={{
-              fontSize: 'var(--small)',
-              lineHeight: 'var(--small-lh)',
-              fontWeight: '500',
-              fontFamily: "'Inter', system-ui, sans-serif",
-              color: 'var(--credit-color)',
-              fontStyle: 'italic'
-            }}
-          >
-            By Zainab Iskandar, Participant
+            This journal will capture reflections and learnings from a 10-day immersion across Chennai and Coimbatore—updated daily during the programme.
           </p>
         </div>
       </section>

@@ -558,3 +558,62 @@
 html {
   font-size: var(--font-size);
 }
+
+/* ====================================================
+   NAVBAR - Mobile Globe Home Icon
+   ==================================================== */
+
+/* Base: desktop/tablet - hide globe icon, show text */
+.brand-home-icon {
+  display: none;
+}
+
+/* Mobile only: show globe icon, hide text, enforce order */
+@media (max-width: 768px) {
+  .brand-text {
+    display: none !important;
+  }
+
+  .brand-home-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+  }
+
+  .brand-home-icon:focus {
+    outline: 3px solid rgba(26, 26, 46, 0.4);
+    outline-offset: 2px;
+  }
+
+  /* Enforce ordering on mobile: [home] [flags] [logos] [spacer] [menu] */
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+  }
+
+  .brand-home-icon {
+    order: 10;
+  }
+
+  .flag-sg {
+    order: 20;
+  }
+
+  .flag-in {
+    order: 30;
+  }
+
+  .partner-logos {
+    order: 40;
+  }
+
+  .nav-menu-toggle {
+    order: 60;
+    margin-left: auto;
+  }
+}

@@ -44,15 +44,31 @@ export function NavBar({ currentPage, onNavigate }: NavBarProps) {
       <div className="w-full px-4 md:px-6">
         <div className="flex items-center justify-between py-3">
           {/* Experience Title, Flags & Logos - Left Aligned */}
-          <div className="flex items-center gap-4" style={{ opacity: '0.9' }}>
-            {/* The India Experience Title - Clickable Home Link */}
-            <button 
+          <div className="flex items-center gap-4 nav-left" style={{ opacity: '0.9' }}>
+            {/* Globe Home Icon - Mobile Only */}
+            <a
+              href="/"
+              onClick={(e) => { e.preventDefault(); onNavigate('home'); }}
+              className="brand-home-icon"
+              aria-label="Go to Home"
+              title="Home"
+              style={{
+                color: isScrolled ? 'var(--navy)' : 'rgba(255, 255, 255, 0.95)'
+              }}
+            >
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false">
+                <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm7.93 9h-3.02a15.9 15.9 0 00-.74-4.02 8.03 8.03 0 013.76 4.02zM12 4c.93 0 2.52 2.24 3.03 6H8.97C9.48 6.24 11.07 4 12 4zM8.05 6.98A15.9 15.9 0 007.09 11H4.07a8.03 8.03 0 014-4.02zM4.07 13h3.02c.18 1.39.51 2.77.98 4.02A8.03 8.03 0 014.07 13zM12 20c-.93 0-2.52-2.24-3.03-6h6.06C14.52 17.76 12.93 20 12 20zm3.95-2.98c.47-1.25.8-2.63.98-4.02h3.02a8.03 8.03 0 01-4 4.02z"/>
+              </svg>
+            </a>
+
+            {/* The India Experience Title - Desktop/Tablet Only */}
+            <button
               onClick={() => onNavigate('home')}
-              className={`font-medium transition-all duration-300 hidden sm:block hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50 rounded-sm px-3 py-2 ${
+              className={`brand-text font-medium transition-all duration-300 hidden sm:block hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50 rounded-sm px-3 py-2 ${
                 isScrolled ? 'hover:bg-[var(--navy)]/10 hover:text-[var(--navy)]' : 'hover:bg-white/20 hover:text-white'
               }`}
-              style={{ 
-                color: isScrolled ? 'var(--text)' : 'rgba(255, 255, 255, 0.95)', 
+              style={{
+                color: isScrolled ? 'var(--text)' : 'rgba(255, 255, 255, 0.95)',
                 letterSpacing: '0.5px',
                 fontSize: 'var(--body)',
                 textShadow: isScrolled ? 'none' : '0 2px 4px rgba(0, 0, 0, 0.4)',
@@ -74,7 +90,7 @@ export function NavBar({ currentPage, onNavigate }: NavBarProps) {
             <div className="flex items-center gap-3">
               <button
                 onClick={() => onNavigate('pretrip')}
-                className="flex items-center transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-opacity-50 rounded-sm p-1"
+                className="flag-sg flex items-center transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-opacity-50 rounded-sm p-1"
                 style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.2))' }}
                 aria-label="Singapore Pre-Trip Preparation"
               >
@@ -83,21 +99,21 @@ export function NavBar({ currentPage, onNavigate }: NavBarProps) {
 
               <button
                 onClick={() => onNavigate('indiainfo')}
-                className="flex items-center transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-opacity-50 rounded-sm p-1"
+                className="flag-in flex items-center transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-opacity-50 rounded-sm p-1"
                 style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.2))' }}
                 aria-label="About India"
               >
                 <span className="text-xl" style={{ fontStyle: 'normal' }}>🇮🇳</span>
               </button>
-              
-              <div 
-                className="w-px h-6 mx-2" 
-                style={{ 
-                  backgroundColor: isScrolled ? 'var(--divider-color)' : 'rgba(255, 255, 255, 0.3)' 
-                }} 
+
+              <div
+                className="w-px h-6 mx-2"
+                style={{
+                  backgroundColor: isScrolled ? 'var(--divider-color)' : 'rgba(255, 255, 255, 0.3)'
+                }}
               />
-              
-              <div className="flex items-center gap-3">
+
+              <div className="partner-logos flex items-center gap-3">
                 <a 
                   href="https://www.isas.nus.edu.sg/" 
                   target="_blank" 
@@ -169,11 +185,11 @@ export function NavBar({ currentPage, onNavigate }: NavBarProps) {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden nav-menu-toggle">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2 hover:bg-[var(--subtle)] rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-opacity-50"
-              style={{ 
+              style={{
                 color: isScrolled ? 'var(--text)' : 'rgba(255, 255, 255, 0.9)',
                 textShadow: isScrolled ? 'none' : '0 1px 2px rgba(0, 0, 0, 0.5)'
               }}

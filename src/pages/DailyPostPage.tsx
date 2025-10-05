@@ -3,7 +3,7 @@ import { Tag } from '../components/Tag';
 import { Button } from '../components/ui/button';
 import { PrivacyNote } from '../components/PrivacyNote';
 import { EditorialJournalCard } from '../components/journal/EditorialJournalCard';
-import { ChevronLeft, ChevronRight, Home } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Chrome as Home } from 'lucide-react';
 import { getJournalPost } from '../data/journalPosts';
 import { isPublished } from '../data/journalConfig';
 

@@ -80,7 +80,7 @@ export function Footer({ onNavigate }: FooterProps = {}) {
 
           {/* Subscription Section */}
           <section id="subscribe" className="text-center subscribe-section">
-            <h4 className="mb-4 footer-heading" style={{ color: 'var(--navy)' }}>
+            <h4 className="mb-4 footer-heading" style={{ color: 'var(--saffron)' }}>
               Get Daily Updates
             </h4>
             <form id="subscribe-form" className="subscribe-form" method="POST" noValidate onSubmit={handleSubscribe}>

@@ -24,17 +24,13 @@ export function Footer({ onNavigate }: FooterProps = {}) {
         <div className="grid md:grid-cols-3 gap-16 lg:gap-24 xl:gap-32 mb-8">
           {/* Logo & Mission */}
           <div className="text-center md:text-left">
-            <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
-              <span className="text-xl" style={{ fontStyle: 'normal' }}>🇸🇬</span>
-              <span className="text-xl" style={{ fontStyle: 'normal' }}>🇮🇳</span>
-            </div>
             <h4 className="mb-3" style={{ color: 'var(--navy)' }}>
               The India Experience 2025
             </h4>
-            <p className="small" style={{ color: 'var(--muted)' }}>
+            <p className="small mb-4" style={{ color: 'var(--muted)' }}>
               A cross-cultural learning journey fostering understanding between Singapore and India.
             </p>
-            <p className="small mt-2" style={{ color: 'var(--muted)' }}>
+            <p className="small" style={{ color: 'var(--muted)' }}>
               © 2025 Reflections by Zainab Iskandar
             </p>
           </div>

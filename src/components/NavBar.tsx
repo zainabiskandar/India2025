@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import isasLogo from 'figma:asset/22e75610c3a946444f55eb83e3c3444cbfc62469.png';
-import sipfLogo from 'figma:asset/dc27718dc48aedf9e62fdd3712da801632bf1f39.png';
+import isasLogo from '/workspaces/India2025/src/assets/22e75610c3a946444f55eb83e3c3444cbfc62469.png';
+import sipfLogo from '/workspaces/India2025/src/assets/dc27718dc48aedf9e62fdd3712da801632bf1f39.png';
 import { Menu, X } from 'lucide-react';
 
 interface NavBarProps {

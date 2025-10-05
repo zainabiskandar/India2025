@@ -196,8 +196,7 @@ export function DailyPostPage({ day, onNavigate }: DailyPostPageProps) {
           <Button 
             variant="ghost" 
             onClick={() => onNavigate('places')}
-            className="hidden md:block transition-colors"
-            className="caption"
+            className="hidden md:block transition-colors caption"
             style={{
               color: 'var(--muted)'
             }}

@@ -10,8 +10,7 @@ export function Tag({ children, variant = 'secondary' }: TagProps) {
   return (
     <Badge 
       variant={variant}
-      className="px-3 py-1 rounded-md border"
-      className="caption"
+      className="px-3 py-1 rounded-md border caption"
       style={{
         backgroundColor: 'var(--subtle)',
         borderColor: 'var(--border)',

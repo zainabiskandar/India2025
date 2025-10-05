@@ -480,9 +480,10 @@
   }
 
   .subscribe-input::placeholder {
-    font-size: var(--body, 16px);
-    color: var(--grey, #717171);
-    opacity: 0.9;
+    font-size: var(--small, 14px);
+    font-style: italic;
+    color: var(--muted, #6B7280);
+    opacity: 1;
   }
 
   .subscribe-input:focus {

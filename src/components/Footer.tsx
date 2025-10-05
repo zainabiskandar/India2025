@@ -95,7 +95,7 @@ export function Footer({ onNavigate }: FooterProps = {}) {
                   className="subscribe-btn subscribe-btn--icon"
                   aria-label="Subscribe"
                 >
-                  <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor">
+                  <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor" style={{ transform: 'rotate(180deg)' }}>
                     <path d="M2.5 12l18.5-9-4.5 9 4.5 9-18.5-9zm7 .5l7.5 4.5-7.5-1.5v-3z"/>
                   </svg>
                 </button>

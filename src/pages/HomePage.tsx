@@ -21,7 +21,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       <HeroSection />
 
       {/* Journey Overview Box */}
-      <section className="flex justify-center px-4 md:px-6 mb-12 relative z-10" style={{ marginTop: '4rem' }}>
+      <section className="flex justify-center px-4 md:px-6 mb-12 relative z-10" style={{ marginTop: '3rem' }}>
         <div 
           className="w-full max-w-4xl"
           style={{ 

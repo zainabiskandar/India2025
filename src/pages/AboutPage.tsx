@@ -65,21 +65,23 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
           </div>
 
           {/* Closing Note */}
-          <div className="mb-16 mt-24">
+          <div className="mb-16 mt-32">
             <div className="text-center max-w-2xl mx-auto">
               <h3
                 className="mb-3"
                 style={{
                   color: 'var(--navy)',
-                  fontFamily: "'Cormorant Garamond', serif"
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: '1.4rem'
                 }}
               >
-                If you would like to reach out to me, send me a Telegram (this probably means you're close to me!)
+                I am contactable on Telegram (this probably means you're close to me!)
               </h3>
               <h3
                 style={{
                   color: 'var(--navy)',
-                  fontFamily: "'Cormorant Garamond', serif"
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: '1.4rem'
                 }}
               >
                 Otherwise, I'm contactable via email at zainab.iwr@gmail.com

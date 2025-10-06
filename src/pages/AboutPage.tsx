@@ -73,7 +73,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                   fontFamily: "'Cormorant Garamond', serif"
                 }}
               >
-                If you would like to reach out to me, send me a Telegram (this probably means you're close to me). Otherwise, I'm contactable via email at zainab.iwr@gmail.com
+                If you would like to reach out to me, send me a Telegram (this probably means you're close to me!) Otherwise, I'm contactable via email at zainab.iwr@gmail.com
               </h3>
             </div>
           </div>

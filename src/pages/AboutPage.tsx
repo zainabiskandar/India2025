@@ -26,17 +26,6 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
 
           {/* Personal Welcome */}
           <div className="mb-20">
-            <h2
-              className="mb-8 text-center"
-              style={{
-                color: 'var(--navy)',
-                fontFamily: "'Cormorant Garamond', serif",
-                fontWeight: '600'
-              }}
-            >
-              Welcome to My Digital Diary
-            </h2>
-
             <div
               className="prose prose-lg max-w-none"
               style={{

@@ -45,20 +45,18 @@ export function NavBar({ currentPage, onNavigate }: NavBarProps) {
           {/* Experience Title, Flags & Logos - Left Aligned */}
           <div className="flex items-center gap-4 nav-left" style={{ opacity: '0.9' }}>
             {/* Globe Home Icon - Mobile Only */}
-            <a
-              href="/"
-              onClick={(e) => { e.preventDefault(); onNavigate('home'); }}
-              className="brand-home-icon"
+            <button
+              onClick={() => onNavigate('home')}
+              className="brand-home-icon flex items-center"
               aria-label="Go to Home"
               title="Home"
               style={{
-                color: isScrolled ? 'var(--navy)' : 'rgba(255, 255, 255, 0.95)'
+                fontSize: '20px',
+                filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.2))'
               }}
             >
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false">
-                <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm7.93 9h-3.02a15.9 15.9 0 00-.74-4.02 8.03 8.03 0 013.76 4.02zM12 4c.93 0 2.52 2.24 3.03 6H8.97C9.48 6.24 11.07 4 12 4zM8.05 6.98A15.9 15.9 0 007.09 11H4.07a8.03 8.03 0 014-4.02zM4.07 13h3.02c.18 1.39.51 2.77.98 4.02A8.03 8.03 0 014.07 13zM12 20c-.93 0-2.52-2.24-3.03-6h6.06C14.52 17.76 12.93 20 12 20zm3.95-2.98c.47-1.25.8-2.63.98-4.02h3.02a8.03 8.03 0 01-4 4.02z"/>
-              </svg>
-            </a>
+              🌏
+            </button>
 
             {/* The India Experience Title - Desktop/Tablet Only */}
             <button

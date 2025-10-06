@@ -122,12 +122,16 @@ export function JournalPage({ onNavigate }: JournalPageProps) {
                 </div>
 
                 {/* Day Header */}
-                <div className="text-center">
+                <div className="text-center flex items-center justify-center h-full">
                   <div
-                    className="text-2xl lg:text-3xl font-bold"
+                    className="font-bold"
                     style={{
                       color: 'var(--navy)',
-                      fontFamily: "'Cormorant Garamond', serif"
+                      fontFamily: "'Cormorant Garamond', serif",
+                      fontSize: 'clamp(1.25rem, 3.5vw, 1.875rem)',
+                      lineHeight: '1.3',
+                      wordBreak: 'break-word',
+                      hyphens: 'auto'
                     }}
                   >
                     {dayData.label}

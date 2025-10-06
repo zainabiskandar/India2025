@@ -65,22 +65,16 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
 
           {/* Closing Note */}
           <div className="mb-16">
-            <div
-              className="p-8 rounded-lg"
-              style={{
-                backgroundColor: 'var(--subtle)',
-                border: '1px solid var(--border)'
-              }}
-            >
-              <p
-                className="text-center italic mb-0"
+            <div className="text-center max-w-3xl mx-auto">
+              <h3
+                className="mb-6"
                 style={{
-                  color: 'var(--muted)',
-                  lineHeight: '1.7'
+                  color: 'var(--navy)',
+                  fontFamily: "'Cormorant Garamond', serif"
                 }}
               >
-                Thank you for being here. I hope these reflections spark your own curiosity about cross-cultural understanding, travel as learning, and the value of approaching the unfamiliar with openness rather than certainty. Feel free to reach out if anything here resonates with you—I'd love to hear your thoughts.
-              </p>
+                If you would like to reach out to me, send me a Telegram (this probably means you're close to me). Otherwise, I'm contactable via email at zainab.iwr@gmail.com
+              </h3>
             </div>
           </div>
 

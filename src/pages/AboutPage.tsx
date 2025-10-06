@@ -8,7 +8,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
   return (
     <div className="min-h-screen py-12 bg-gradient-to-b from-[var(--navy)]/5 to-white">
       <div className="container-mobile md:container-desktop">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
 
           {/* Header Section */}
           <div className="text-center mb-12">
@@ -30,7 +30,8 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
               className="prose prose-lg max-w-none"
               style={{
                 color: 'var(--text)',
-                lineHeight: '1.8'
+                lineHeight: '1.8',
+                textAlign: 'justify'
               }}
             >
               <p className="text-lg mb-6" style={{ color: 'var(--text)' }}>
@@ -54,7 +55,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
               </p>
 
               <p className="text-lg mb-6" style={{ color: 'var(--text)' }}>
-                I have found that writing helps me make sense of what I am feeling and learning, so I hope this website becomes a space where I try to do that—gently, honestly, and with immense gratitude for the opportunity I have been given. Here, you will find my reflections, the moments that stay with me, and lessons from people I meet along the way. Some days may be long and detailed, while others may simply be a sentence or a photograph, but each one, I hope, will carry a little sincerity—and update you, Mama, that I am alive.
+                I have found that writing helps me make sense of what I am feeling and learning, so I hope this website becomes a space where I try to do that—gently, honestly, and with immense gratitude for the opportunity I have been given. Here, you will find my reflections, the moments that stay with me, and lessons from people I meet along the way. Some days may be long and detailed, while others may simply be a sentence or a photograph, but each one, I hope, will carry a little sincerity—and update you, Mama, that I am alive!
               </p>
 
               <p className="text-lg mb-0" style={{ color: 'var(--text)' }}>
@@ -64,16 +65,26 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
           </div>
 
           {/* Closing Note */}
-          <div className="mb-16">
-            <div className="text-center max-w-3xl mx-auto">
+          <div className="mb-16 mt-24">
+            <div className="text-center max-w-2xl mx-auto">
               <h3
-                className="mb-6"
+                className="mb-3"
                 style={{
                   color: 'var(--navy)',
-                  fontFamily: "'Cormorant Garamond', serif"
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: '1.5rem'
                 }}
               >
-                If you would like to reach out to me, send me a Telegram (this probably means you're close to me!) Otherwise, I'm contactable via email at zainab.iwr@gmail.com
+                If you would like to reach out to me, send me a Telegram (this probably means you're close to me!)
+              </h3>
+              <h3
+                style={{
+                  color: 'var(--navy)',
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: '1.5rem'
+                }}
+              >
+                Otherwise, I'm contactable via email at zainab.iwr@gmail.com
               </h3>
             </div>
           </div>

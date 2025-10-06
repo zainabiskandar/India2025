@@ -34,109 +34,31 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
               }}
             >
               <p className="text-lg mb-6" style={{ color: 'var(--text)' }}>
-                Hi, everyone. Welcome to my corner of the internet, where I'll be documenting an adventure that I'll soon be embarking on—a 10-day immersion across Chennai and Coimbatore, India. This is my first time visiting India, and I find myself both excited and curious about what lies ahead.
+                Hi everyone, and welcome to my corner of the internet for an upcoming adventure.
               </p>
 
               <p className="text-lg mb-6" style={{ color: 'var(--text)' }}>
-                This journal isn't just about recording what happens. It's about pausing to reflect, to question, and to truly absorb the experiences as they unfold. I've always believed that the most meaningful learning happens when we take the time to process our observations, to sit with our questions, and to be honest about what we don't yet understand.
+                In a few days, I will be embarking on The India Experience 2025, an immersion programme across Chennai and Coimbatore. I have never been to India before, and even now, as I write this, it feels a little surreal to say that I will be going.
+              </p>
+
+              <p className="text-lg mb-6" style={{ color: 'var(--text)' }}>
+                Many people close to me call India home, and I think of dear Kim, Ishita, Nandini, Janhavee, Muwafiqa, and Rahul—all of whom have been so generous with their stories of their motherland, each sharing its varied rhythms and colours. We had always made plans to journey there together, and who would have thought that I would make the trip alone first. But I am excited to see for myself what connection, culture, and home might look like beyond what I know, and I hope to join more travels in the future, insyaAllah.
+              </p>
+
+              <p className="text-lg mb-6" style={{ color: 'var(--text)' }}>
+                I chose to take this trip because I felt a quiet pull towards it—an opportunity not just to see a new place, but to explore questions that have always lived quietly in me about belonging, identity, and meaning. And honestly, how could I, as someone with a touch of wanderlust, say no?
+              </p>
+
+              <p className="text-lg mb-6" style={{ color: 'var(--text)' }}>
+                For me, this journey is not only about travel or a short leave from school. It is also a kind of discovery—of place, of ideas, of faith, and, as with every adventure, of myself.
+              </p>
+
+              <p className="text-lg mb-6" style={{ color: 'var(--text)' }}>
+                I have found that writing helps me make sense of what I am feeling and learning, so I hope this website becomes a space where I try to do that—gently, honestly, and with immense gratitude for the opportunity I have been given. Here, you will find my reflections, the moments that stay with me, and lessons from people I meet along the way. Some days may be long and detailed, while others may simply be a sentence or a photograph, but each one, I hope, will carry a little sincerity—and update you, Mama, that I am alive.
               </p>
 
               <p className="text-lg mb-0" style={{ color: 'var(--text)' }}>
-                So consider this both a travelogue and a thinking space—somewhere between a formal journal and an ongoing conversation with myself about culture, community, and what it means to step outside familiar boundaries.
-              </p>
-            </div>
-          </div>
-
-          {/* About Me */}
-          <div className="mb-20">
-            <h2
-              className="mb-8"
-              style={{
-                color: 'var(--navy)',
-                fontFamily: "'Cormorant Garamond', serif",
-                fontWeight: '600'
-              }}
-            >
-              A Bit About Me
-            </h2>
-
-            <div
-              className="space-y-6"
-              style={{
-                color: 'var(--text)',
-                lineHeight: '1.8'
-              }}
-            >
-              <p className="text-lg" style={{ color: 'var(--text)' }}>
-                I'm currently a student at [Your University/Program], studying [Your Field]. My academic interests have always leaned toward [placeholder for your interests—e.g., "understanding how policy shapes lived experiences" or "exploring the intersection of culture and innovation"]. But beyond the formal learning, I'm drawn to the kind of education that comes from simply being present in a place that's new to you, listening more than speaking, and remaining open to having your assumptions gently challenged.
-              </p>
-
-              <p className="text-lg" style={{ color: 'var(--text)' }}>
-                [Placeholder: Add more about your background, what drives your curiosity, your approach to learning, or any relevant context about who you are as a student and thinker. This could be 2-3 more paragraphs about your journey, interests, or what shaped your perspective.]
-              </p>
-            </div>
-          </div>
-
-          {/* Why This Trip - Intentions */}
-          <div className="mb-20">
-            <h2
-              className="mb-8"
-              style={{
-                color: 'var(--navy)',
-                fontFamily: "'Cormorant Garamond', serif",
-                fontWeight: '600'
-              }}
-            >
-              Why This Trip: My Intentions
-            </h2>
-
-            <div
-              className="space-y-6"
-              style={{
-                color: 'var(--text)',
-                lineHeight: '1.8'
-              }}
-            >
-              <p className="text-lg" style={{ color: 'var(--text)' }}>
-                I decided to go on this trip because it was an opportunity I didn't want to miss. When I first heard about the India Experience programme, something about it felt right—not just intellectually interesting, but personally significant. There was a pull toward understanding a part of the world I knew very little about, beyond the surface-level narratives we often encounter.
-              </p>
-
-              <p className="text-lg" style={{ color: 'var(--text)' }}>
-                My intentions for this journey are both specific and open-ended. Specifically, I want to [placeholder: e.g., "understand how traditional values coexist with rapid modernization," "learn about community-led innovation," "observe how different cultures approach problem-solving"]. But I'm also intentionally leaving space for the unexpected—the conversations I didn't anticipate, the questions I didn't know to ask, the moments that shift how I see not just India, but my own context back home.
-              </p>
-
-              <p className="text-lg" style={{ color: 'var(--text)' }}>
-                [Placeholder: Continue with more about your intentions. What do you hope to learn? What questions are you bringing with you? What do you hope this experience will change about how you think or see the world? This could be several more paragraphs—don't hold back on the reflection.]
-              </p>
-            </div>
-          </div>
-
-          {/* What I Hope to Discover */}
-          <div className="mb-20">
-            <h2
-              className="mb-8"
-              style={{
-                color: 'var(--navy)',
-                fontFamily: "'Cormorant Garamond', serif",
-                fontWeight: '600'
-              }}
-            >
-              What I Hope to Discover
-            </h2>
-
-            <div
-              className="space-y-6"
-              style={{
-                color: 'var(--text)',
-                lineHeight: '1.8'
-              }}
-            >
-              <p className="text-lg" style={{ color: 'var(--text)' }}>
-                Beyond the structured programme activities and planned site visits, I'm most curious about the in-between moments—the informal conversations, the observations that happen when you're just walking through a neighbourhood, the patterns you start to notice after a few days in a place. I want to understand not just what people do, but why they do it, and what that reveals about different ways of organizing society, family, community, and purpose.
-              </p>
-
-              <p className="text-lg" style={{ color: 'var(--text)' }}>
-                [Placeholder: What else are you hoping to discover or understand? What aspects of Indian culture, society, or daily life are you most curious about? What do you hope to bring back with you—not just intellectually, but in terms of perspective or understanding? Add as many paragraphs as you need to fully express your hopes and curiosities for this journey.]
+                If you are reading this, thank you for being here. If you would like to receive daily updates, you can drop your email at the bottom of this page. I hope this space becomes not only a record of what I see, but also of how I grow.
               </p>
             </div>
           </div>

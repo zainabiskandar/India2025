@@ -58,21 +58,21 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                 I have found that writing helps me make sense of what I am feeling and learning, so I hope this website becomes a space where I try to do that—gently, honestly, and with immense gratitude for the opportunity I have been given. Here, you will find my reflections, the moments that stay with me, and lessons from people I meet along the way. Some days may be long and detailed, while others may simply be a sentence or a photograph, but each one, I hope, will carry a little sincerity—and update you, Mama, that I am alive!
               </p>
 
-              <p className="text-lg mb-0" style={{ color: 'var(--text)' }}>
+              <p className="text-lg mb-16" style={{ color: 'var(--text)' }}>
                 If you are reading this, thank you for being here. If you would like to receive daily updates, you can drop your email at the bottom of this page. I hope this space becomes not only a record of what I see, but also of how I grow.
               </p>
             </div>
           </div>
 
           {/* Closing Note */}
-          <div className="mb-16 mt-32">
+          <div className="mb-16">
             <div className="text-center max-w-2xl mx-auto">
               <h3
                 className="mb-3"
                 style={{
                   color: 'var(--navy)',
                   fontFamily: "'Cormorant Garamond', serif",
-                  fontSize: '1.4rem'
+                  fontSize: '1.1rem'
                 }}
               >
                 I am contactable on Telegram (this probably means you're close to me!)
@@ -81,7 +81,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                 style={{
                   color: 'var(--navy)',
                   fontFamily: "'Cormorant Garamond', serif",
-                  fontSize: '1.4rem'
+                  fontSize: '1.1rem'
                 }}
               >
                 Otherwise, I'm contactable via email at zainab.iwr@gmail.com

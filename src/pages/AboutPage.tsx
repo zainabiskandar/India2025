@@ -8,7 +8,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
   return (
     <div className="min-h-screen py-12 bg-gradient-to-b from-[var(--navy)]/5 to-white">
       <div className="container-mobile md:container-desktop">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
 
           {/* Header Section */}
           <div className="text-center mb-12">
@@ -71,8 +71,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                 className="mb-3"
                 style={{
                   color: 'var(--navy)',
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontSize: '1.5rem'
+                  fontFamily: "'Cormorant Garamond', serif"
                 }}
               >
                 If you would like to reach out to me, send me a Telegram (this probably means you're close to me!)
@@ -80,8 +79,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
               <h3
                 style={{
                   color: 'var(--navy)',
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontSize: '1.5rem'
+                  fontFamily: "'Cormorant Garamond', serif"
                 }}
               >
                 Otherwise, I'm contactable via email at zainab.iwr@gmail.com

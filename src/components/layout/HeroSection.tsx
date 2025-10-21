@@ -1,4 +1,5 @@
 import React from 'react';
+import indiaExpLogo from '../../assets/The India Experience Logo.png';
 
 export function HeroSection() {
   return (
@@ -31,20 +32,18 @@ export function HeroSection() {
 
       {/* Central Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-        {/* Main Title */}
-        <h1
-          style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: 'clamp(3rem, 6vw, 5rem)',
-            fontWeight: '700',
-            color: 'white',
-            letterSpacing: '0.5px',
-            textShadow: '0 8px 32px rgba(0, 0, 0, 0.5)',
-            marginBottom: '0.5rem'
-          }}
-        >
-          India
-        </h1>
+        {/* Main Logo */}
+        <div className="flex justify-center mb-4">
+          <img
+            src={indiaExpLogo}
+            alt="The India Experience"
+            style={{
+              width: 'clamp(300px, 60vw, 600px)',
+              height: 'auto',
+              filter: 'drop-shadow(0 8px 32px rgba(0, 0, 0, 0.6))'
+            }}
+          />
+        </div>
 
         {/* Location and Year */}
         <p
@@ -74,7 +73,7 @@ export function HeroSection() {
             padding: '0 1rem'
           }}
         >
-          Reflections from a participant on the India Experience program organized by Singapore-India Partnership Foundation and Institute of South Asian Studies.
+          Reflections of a participant on The India Experience programme organised by Singapore-India Partnership Foundation and NUS, Institute of South Asian Studies.
         </p>
       </div>
 

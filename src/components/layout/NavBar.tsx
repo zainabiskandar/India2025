@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import isasLogo from '../../assets/22e75610c3a946444f55eb83e3c3444cbfc62469.png';
 import sipfLogo from '../../assets/dc27718dc48aedf9e62fdd3712da801632bf1f39.png';
+import indiaExpLogo from '../../assets/The India Experience Logo.png';
 import { Menu, X } from 'lucide-react';
 
 interface NavBarProps {
@@ -58,21 +59,23 @@ export function NavBar({ currentPage, onNavigate }: NavBarProps) {
               🌏
             </button>
 
-            {/* The India Experience Title - Desktop/Tablet Only */}
+            {/* The India Experience Logo - Desktop/Tablet Only */}
             <button
               onClick={() => onNavigate('home')}
-              className={`brand-text font-medium transition-all duration-300 hidden sm:block hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50 rounded-sm px-3 py-2 ${
-                isScrolled ? 'hover:bg-[var(--navy)]/10 hover:text-[var(--navy)]' : 'hover:bg-white/20 hover:text-white'
-              }`}
-              style={{
-                color: isScrolled ? 'var(--text)' : 'rgba(255, 255, 255, 0.95)',
-                letterSpacing: '0.5px',
-                fontSize: 'var(--body)',
-                textShadow: isScrolled ? 'none' : '0 2px 4px rgba(0, 0, 0, 0.4)',
-                fontStyle: 'normal'
-              }}
+              className="brand-logo hidden sm:flex items-center transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50 rounded-sm px-2 py-1"
+              aria-label="Go to Home - The India Experience"
             >
-              The India Experience
+              <img
+                src={indiaExpLogo}
+                alt="The India Experience"
+                className="transition-opacity duration-300"
+                style={{
+                  height: '36px',
+                  width: 'auto',
+                  opacity: isScrolled ? '0.85' : '0.95',
+                  filter: isScrolled ? 'drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2))' : 'drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5))'
+                }}
+              />
             </button>
             
             {/* Divider after title */}

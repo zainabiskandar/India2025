@@ -127,11 +127,13 @@ export function Footer({ onNavigate }: FooterProps = {}) {
           </div>
         </div>
 
-        {/* Tamil Phrase */}
+        {/* Inspirational Quote */}
         <div className="text-center py-6 border-t" style={{ borderColor: 'var(--border)' }}>
-          <p className="tamil mb-2">கல்வி என்பது கற்றதை மற்றவர்களுடன் பகிர்ந்து கொள்வதே</p>
-          <p className="small" style={{ color: 'var(--muted)' }}>
-            "Education is sharing what we learn with others"
+          <p className="small mb-3" style={{ color: 'var(--text)', fontStyle: 'italic', lineHeight: '1.6', maxWidth: '800px', margin: '0 auto 12px' }}>
+            "My message, especially to young people is to have courage to think differently, courage to invent, to travel the unexplored path, courage to discover the impossible and to conquer the problems and succeed."
+          </p>
+          <p className="small" style={{ color: 'var(--muted)', fontWeight: '500' }}>
+            Dr. APJ Abdul Kalam, 11th President of India
           </p>
         </div>
       </div>

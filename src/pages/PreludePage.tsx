@@ -69,8 +69,7 @@ export function PreludePage({ onNavigate }: PreludePageProps) {
 
         <p>
           Even so, traces of India remain with me. I have been holding onto them gently so they do
-          not slip away. I listen to the songs that coloured my days there—<em>Kush Kush Woh Tahe</em>,
-          <em> Tum Hi Ho</em>. I scroll through photos in our group chat. The memories hum quietly
+          not slip away. I listen to the songs that coloured my days there. I scroll through photos in our group chat. The memories hum quietly
           under the surface.
         </p>
 
@@ -95,7 +94,7 @@ export function PreludePage({ onNavigate }: PreludePageProps) {
         <p>
           The first five days in Chennai were fast-paced—industry visits, sharp minds, quick reflections.
           We ate well, laughed hard, and thought even harder. In Coimbatore, the rhythm softened.
-          The factories and industrial sites showed another face of India—less about nation-building,
+          The factories and organisational visits showed another face of India—less about nation-building,
           more about the quiet hands that keep a nation moving. Together, both cities revealed how
           the smallest pieces—people, places, effort—form the living puzzle of India.
         </p>
@@ -118,9 +117,7 @@ export function PreludePage({ onNavigate }: PreludePageProps) {
           The Human Layer
         </h2>
         <p>
-          I went to India because many of my close friends—Kim, Ishita, Nandini, Janhavee,
-          Muwafiqa, Rahul—call it home. They have always been generous with their stories of their
-          motherland, with its rhythms and colours. We had always dreamed of travelling there
+          I went to India because many of my close friends call it home. We had always dreamed of travelling there
           together, and who would have thought I would make the trip alone first?
         </p>
         <p>
@@ -128,7 +125,7 @@ export function PreludePage({ onNavigate }: PreludePageProps) {
           eyes, but with their hearts in mind. When India greeted me with warmth, I felt it on their
           behalf too. Meeting industry leaders, students, and hosts reminded me how vast and
           interconnected the world is. We are all travellers, each of us born somewhere, carrying
-          our own stories. To be welcomed into another's time and space is grace.
+          our own stories. To listen to another's story is a privilege; to be welcomed into their time and space is grace.
         </p>
 
         <h2
@@ -144,7 +141,7 @@ export function PreludePage({ onNavigate }: PreludePageProps) {
           Learning & Faith
         </h2>
         <p>
-          I learned about service through hospitality. Every place we visited offered us something—tea,
+          I learned about service through hospitality. Every place we visited offered us something—chai,
           biscuits, time, attention. Gratitude became second nature. Humility came easily there; you
           cannot stand before such vibrancy, faith, and human devotion without feeling small. I did
           not always manage to pray my five daily prayers on time, but I found reflections of worship
@@ -165,8 +162,7 @@ export function PreludePage({ onNavigate }: PreludePageProps) {
           Coming Home
         </h2>
         <p>
-          Since returning, I feel calm. My soul feels nourished. This trip was not just travel—it was
-          a kind of healing. For months, I had longed to go somewhere unfamiliar, to be re-enchanted
+          Since returning, I feel calm. My soul feels nourished. For months, I had longed to go somewhere unfamiliar, to be re-enchanted
           with the world, and Allah granted that wish. What I want to keep from India is its spirit of
           hospitality and its rhythm of community. Even in Singapore, there are always new people to
           meet, stories to hear, places to discover. I want to live in motion again—developing,

@@ -34,15 +34,23 @@ export function HeroSection() {
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         {/* Main Logo */}
         <div className="flex justify-center mb-4">
-          <img
-            src={indiaExpLogo}
-            alt="The India Experience"
+          <div
             style={{
-              width: 'clamp(300px, 60vw, 600px)',
-              height: 'auto',
-              filter: 'drop-shadow(0 8px 32px rgba(0, 0, 0, 0.6))'
+              background: 'radial-gradient(ellipse, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.6) 40%, transparent 70%)',
+              padding: '40px 60px',
+              borderRadius: '20px'
             }}
-          />
+          >
+            <img
+              src={indiaExpLogo}
+              alt="The India Experience"
+              style={{
+                width: 'clamp(300px, 60vw, 600px)',
+                height: 'auto',
+                filter: 'drop-shadow(0 8px 32px rgba(0, 0, 0, 0.4))'
+              }}
+            />
+          </div>
         </div>
 
         {/* Location and Year */}

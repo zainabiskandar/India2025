@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import isasLogo from '../../assets/22e75610c3a946444f55eb83e3c3444cbfc62469.png';
+import isasLogo from '../../assets/NUS ISAS Logo.jpg';
 import sipfLogo from '../../assets/dc27718dc48aedf9e62fdd3712da801632bf1f39.png';
 import indiaExpLogo from '../../assets/The India Experience Logo copy.png';
 import { Menu, X } from 'lucide-react';
@@ -45,24 +45,10 @@ export function NavBar({ currentPage, onNavigate }: NavBarProps) {
         <div className="flex items-center justify-between py-3">
           {/* Experience Title, Flags & Logos - Left Aligned */}
           <div className="flex items-center gap-4 nav-left" style={{ opacity: '0.9' }}>
-            {/* Globe Home Icon - Mobile Only */}
+            {/* The India Experience Logo - All Screens */}
             <button
               onClick={() => onNavigate('home')}
-              className="brand-home-icon flex items-center"
-              aria-label="Go to Home"
-              title="Home"
-              style={{
-                fontSize: '20px',
-                filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.2))'
-              }}
-            >
-              🌏
-            </button>
-
-            {/* The India Experience Logo - Desktop/Tablet Only */}
-            <button
-              onClick={() => onNavigate('home')}
-              className="brand-logo hidden sm:flex items-center transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50 rounded-sm px-2 py-1"
+              className="brand-logo flex items-center transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50 rounded-sm px-2 py-1"
               aria-label="Go to Home - The India Experience"
             >
               <img
@@ -77,13 +63,13 @@ export function NavBar({ currentPage, onNavigate }: NavBarProps) {
                 }}
               />
             </button>
-            
-            {/* Divider after title */}
-            <div 
-              className="w-px h-6 hidden sm:block" 
-              style={{ 
-                backgroundColor: isScrolled ? 'var(--divider-color)' : 'rgba(255, 255, 255, 0.3)' 
-              }} 
+
+            {/* Divider after logo */}
+            <div
+              className="w-px h-6"
+              style={{
+                backgroundColor: isScrolled ? 'var(--divider-color)' : 'rgba(255, 255, 255, 0.3)'
+              }}
             />
             
             {/* Flags */}

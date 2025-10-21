@@ -1,5 +1,5 @@
 import React from 'react';
-import indiaExpLogo from '../../assets/The India Experience Logo.png';
+import indiaExpLogo from '../../assets/The India Experience Logo copy.png';
 
 export function HeroSection() {
   return (

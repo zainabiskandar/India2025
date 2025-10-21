@@ -36,9 +36,9 @@ export function HeroSection() {
         <div className="flex justify-center mb-4">
           <div
             style={{
-              background: 'radial-gradient(ellipse, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.6) 40%, transparent 70%)',
-              padding: '40px 60px',
-              borderRadius: '20px'
+              background: 'radial-gradient(ellipse 120% 100% at 50% 50%, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.15) 50%, transparent 80%)',
+              padding: '50px 70px',
+              borderRadius: '50%'
             }}
           >
             <img
@@ -47,7 +47,7 @@ export function HeroSection() {
               style={{
                 width: 'clamp(300px, 60vw, 600px)',
                 height: 'auto',
-                filter: 'drop-shadow(0 8px 32px rgba(0, 0, 0, 0.4))'
+                filter: 'drop-shadow(0 4px 16px rgba(0, 0, 0, 0.3))'
               }}
             />
           </div>

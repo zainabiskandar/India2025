@@ -86,22 +86,22 @@ export function PreludePage({ onNavigate }: PreludePageProps) {
           The Surface Layer — Memories & Movement
         </h2>
         <p>
-          My journey took me to the south of India—to Tamil Nadu, to the cities of Chennai and
+          My journey took me to the south of India, to Tamil Nadu, to the cities of Chennai and
           Coimbatore. I had not given much thought to the cities before the trip; my imagination
-          had been captured by the vastness of India itself—a world of colours, flavours, and sounds.
+          had been captured by the vastness of India itself — a world of colours, flavours, and sounds.
           And it truly was.
         </p>
         <p>
-          The first five days in Chennai were fast-paced—industry visits, sharp minds, quick reflections.
+          The first five days in Chennai were fast-paced: industry visits, sharp minds, quick reflections.
           We ate well, laughed hard, and thought even harder. In Coimbatore, the rhythm softened.
-          The factories and organisational visits showed another face of India—less about nation-building,
+          The factories and organisational visits showed another face of India...less about nation-building,
           more about the quiet hands that keep a nation moving. Together, both cities revealed how
-          the smallest pieces—people, places, effort—form the living puzzle of India.
+          the smallest pieces — people, places, effort — form the living puzzle of India.
         </p>
         <p>
           Ten days may seem short, but I was intentionally present. I arrived unattached, open, ready
           to receive. I lived among the people, ate their food, breathed their air, used their water.
-          I truly lived in India for ten days—and in return, India lived in me.
+          I truly lived in India for ten days. And in return, India lived in me.
         </p>
 
         <h2
@@ -117,7 +117,8 @@ export function PreludePage({ onNavigate }: PreludePageProps) {
           The Human Layer
         </h2>
         <p>
-          I went to India because many of my close friends call it home. We had always dreamed of travelling there
+          I went to India because many of my close friends call it home. They have always been generous with their stories of their
+          motherland, with its rhythms and colours. We had always dreamed of travelling there
           together, and who would have thought I would make the trip alone first?
         </p>
         <p>
@@ -146,7 +147,7 @@ export function PreludePage({ onNavigate }: PreludePageProps) {
           cannot stand before such vibrancy, faith, and human devotion without feeling small. I did
           not always manage to pray my five daily prayers on time, but I found reflections of worship
           everywhere—temples, ashrams, quiet acts of care. Among my Hindu brothers and sisters, I felt
-          a shared reverence—a humility before the Divine.
+          a shared reverence, a humility before the Divine.
         </p>
 
         <h2
@@ -170,29 +171,34 @@ export function PreludePage({ onNavigate }: PreludePageProps) {
         </p>
       </section>
 
-      <div className="mt-10 md:mt-12">
-        <p className="mb-6" style={{ color: 'var(--text)' }}>
-          As I settle back home, I want to hold on to the traces of those ten days. In the pages
-          that follow, I will revisit them one by one: what we saw, who we met, and what stayed with me.
-          This is not a report; it is a remembering.
-        </p>
-        <button
-          onClick={() => onNavigate('post', 1)}
-          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-colors text-sm"
-          style={{
-            borderColor: 'var(--saffron)',
-            color: 'var(--navy)',
-            background: 'var(--saffron)',
-            cursor: 'pointer',
-            fontFamily: "'Work Sans', system-ui, sans-serif",
-            fontSize: 'clamp(12px, 1.5vw, 14px)'
-          }}
-          aria-label="Begin Day 1 – Chennai"
-        >
-          <span>Begin Day 1 – Chennai</span>
-          <span aria-hidden="true">→</span>
-        </button>
-      </div>
+      <p
+        className="mt-10 md:mt-12 mb-6"
+        style={{
+          color: 'var(--text)',
+          lineHeight: '1.6',
+          fontFamily: "'Work Sans', system-ui, sans-serif",
+          fontSize: 'var(--body)'
+        }}
+      >
+        As I settle back home, I want to hold on to the traces of those ten days. In the pages
+        that follow, I will revisit them one by one: what we saw, who we met, and what stayed with me.
+      </p>
+      <button
+        onClick={() => onNavigate('post', 1)}
+        className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-colors text-sm"
+        style={{
+          borderColor: 'var(--saffron)',
+          color: 'var(--navy)',
+          background: 'var(--saffron)',
+          cursor: 'pointer',
+          fontFamily: "'Work Sans', system-ui, sans-serif",
+          fontSize: 'clamp(12px, 1.5vw, 14px)'
+        }}
+        aria-label="Begin Day 1 – Chennai"
+      >
+        <span>Begin Day 1 – Chennai</span>
+        <span aria-hidden="true">→</span>
+      </button>
     </main>
   );
 }

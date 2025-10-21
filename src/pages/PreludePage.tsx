@@ -17,9 +17,9 @@ export function PreludePage({ onNavigate }: PreludePageProps) {
           fontFamily: "'Work Sans', system-ui, sans-serif"
         }}
       >
-        Note from the writer — I did not manage to update this journal during the 10 days in India.
+        Note: I did not manage to update this journal during the 10 days in India.
         I was fully immersed, learning and living in the world around me. What follows is written
-        after returning home, as I begin to remember, reflect, and re-enter.
+        after returning home, as I begin to remember and reflect.
       </p>
 
       <h1
@@ -174,24 +174,22 @@ export function PreludePage({ onNavigate }: PreludePageProps) {
         </p>
       </section>
 
-      <div
-        className="mt-10 md:mt-12 p-4 md:p-5 rounded-xl border"
-        style={{ borderColor: 'var(--border)', background: 'var(--subtle)' }}
-      >
-        <p className="mb-4" style={{ color: 'var(--text)' }}>
+      <div className="mt-10 md:mt-12">
+        <p className="mb-6" style={{ color: 'var(--text)' }}>
           As I settle back home, I want to hold on to the traces of those ten days. In the pages
           that follow, I will revisit them one by one: what we saw, who we met, and what stayed with me.
           This is not a report; it is a remembering.
         </p>
         <button
           onClick={() => onNavigate('post', 1)}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors"
+          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-colors text-sm"
           style={{
             borderColor: 'var(--saffron)',
             color: 'var(--navy)',
             background: 'var(--saffron)',
             cursor: 'pointer',
-            fontFamily: "'Work Sans', system-ui, sans-serif"
+            fontFamily: "'Work Sans', system-ui, sans-serif",
+            fontSize: 'clamp(12px, 1.5vw, 14px)'
           }}
           aria-label="Begin Day 1 – Chennai"
         >

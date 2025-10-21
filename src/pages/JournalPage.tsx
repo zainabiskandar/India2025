@@ -61,38 +61,62 @@ export function JournalPage({ onNavigate }: JournalPageProps) {
           <div className="max-w-6xl mx-auto mb-6">
             <button
               onClick={() => handleDayClick('prelude')}
-              className="block w-full rounded-2xl border p-5 md:p-6 lg:p-7 transition-all duration-300 hover:shadow-lg text-left"
-              style={{ borderColor: 'var(--saffron)', background: 'rgba(255, 176, 107, 0.08)' }}
+              className="group relative border rounded-xl p-4 lg:p-6 transition-all duration-300 focus:outline-none focus:ring-3 focus:ring-navy/20 cursor-pointer hover:shadow-xl w-full text-left"
+              style={{
+                backgroundColor: 'white',
+                borderColor: 'var(--saffron)',
+                minHeight: '180px'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.borderColor = 'var(--navy)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.borderColor = 'var(--saffron)';
+              }}
               aria-label="Read Prelude: Returning"
             >
-              <div className="flex items-center justify-between gap-3 flex-wrap">
-                <h2
-                  className="font-bold"
+              <div className="absolute top-3 right-3">
+                <div
+                  className="flex items-center gap-1 px-2 py-1 rounded-full text-xs"
                   style={{
-                    fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: 'clamp(1.5rem, 3vw, 2rem)',
-                    lineHeight: '1.3',
-                    color: 'var(--navy)'
+                    backgroundColor: 'var(--posted-bg)',
+                    color: 'var(--green)',
+                    fontSize: '10px',
+                    fontWeight: '500',
+                    fontFamily: "'Work Sans', system-ui, sans-serif"
                   }}
-                >
-                  Prelude: Returning
-                </h2>
-                <span
-                  className="text-xs px-2.5 py-1 rounded-full border flex items-center gap-1"
-                  style={{ borderColor: 'var(--green)', color: 'var(--green)', backgroundColor: 'var(--posted-bg)' }}
                 >
                   <span
                     className="w-1.5 h-1.5 rounded-full"
                     style={{ backgroundColor: 'var(--green)' }}
                   />
                   Posted
-                </span>
+                </div>
               </div>
-              <p className="mt-2" style={{ color: 'var(--muted)', fontSize: 'clamp(14px, 2vw, 16px)' }}>
-                A bridge between immersion and remembering — written after returning home.
-              </p>
-              <div className="mt-4" style={{ color: 'var(--navy)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
-                Read prelude →
+
+              <div className="text-center flex items-center justify-center h-full">
+                <div
+                  className="font-bold"
+                  style={{
+                    color: 'var(--navy)',
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontSize: 'clamp(1.25rem, 3.5vw, 1.875rem)',
+                    lineHeight: '1.3',
+                    wordBreak: 'break-word',
+                    hyphens: 'auto'
+                  }}
+                >
+                  Prelude: Returning
+                </div>
+              </div>
+
+              <div
+                className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                style={{ color: 'var(--navy)' }}
+              >
+                <BookOpen size={16} />
               </div>
             </button>
           </div>

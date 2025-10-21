@@ -9,8 +9,9 @@ import { JournalPage } from './pages/JournalPage';
 import { AboutPage } from './pages/AboutPage';
 import { PreTripPage } from './pages/PreTripPage';
 import { IndiaInfoPage } from './pages/IndiaInfoPage';
+import { PreludePage } from './pages/PreludePage';
 
-type Page = 'home' | 'post' | 'journal' | 'about' | 'pretrip' | 'indiainfo';
+type Page = 'home' | 'post' | 'journal' | 'about' | 'pretrip' | 'indiainfo' | 'prelude';
 
 interface AppState {
   currentPage: Page;
@@ -50,6 +51,8 @@ export default function App() {
         return <PreTripPage onNavigate={handleNavigate} />;
       case 'indiainfo':
         return <IndiaInfoPage onNavigate={handleNavigate} />;
+      case 'prelude':
+        return <PreludePage onNavigate={handleNavigate} />;
       default:
         return <HomePage onNavigate={handleNavigate} />;
     }

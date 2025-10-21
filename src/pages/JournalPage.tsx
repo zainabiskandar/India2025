@@ -19,6 +19,8 @@ export function JournalPage({ onNavigate }: JournalPageProps) {
     if (isPublished(day)) {
       if (typeof day === 'number') {
         onNavigate('post', day);
+      } else if (day === 'prelude') {
+        onNavigate('prelude');
       } else if (day === 'goodbye-sg') {
         onNavigate('post', 0);
       } else if (day === 'goodbye-india') {
@@ -55,9 +57,49 @@ export function JournalPage({ onNavigate }: JournalPageProps) {
       <section className="py-16">
         <div className="container-desktop">
 
+          {/* Prelude full-width card */}
+          <div className="max-w-6xl mx-auto mb-6">
+            <button
+              onClick={() => handleDayClick('prelude')}
+              className="block w-full rounded-2xl border p-5 md:p-6 lg:p-7 transition-all duration-300 hover:shadow-lg text-left"
+              style={{ borderColor: 'var(--saffron)', background: 'rgba(255, 176, 107, 0.08)' }}
+              aria-label="Read Prelude: Returning"
+            >
+              <div className="flex items-center justify-between gap-3 flex-wrap">
+                <h2
+                  className="font-bold"
+                  style={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontSize: 'clamp(1.5rem, 3vw, 2rem)',
+                    lineHeight: '1.3',
+                    color: 'var(--navy)'
+                  }}
+                >
+                  Prelude: Returning
+                </h2>
+                <span
+                  className="text-xs px-2.5 py-1 rounded-full border flex items-center gap-1"
+                  style={{ borderColor: 'var(--green)', color: 'var(--green)', backgroundColor: 'var(--posted-bg)' }}
+                >
+                  <span
+                    className="w-1.5 h-1.5 rounded-full"
+                    style={{ backgroundColor: 'var(--green)' }}
+                  />
+                  Posted
+                </span>
+              </div>
+              <p className="mt-2" style={{ color: 'var(--muted)', fontSize: 'clamp(14px, 2vw, 16px)' }}>
+                A bridge between immersion and remembering — written after returning home.
+              </p>
+              <div className="mt-4" style={{ color: 'var(--navy)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+                Read prelude →
+              </div>
+            </button>
+          </div>
+
           {/* Calendar Grid - 2x5 on desktop, 2-column stack on mobile */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6 max-w-6xl mx-auto">
-            {journeyData.map((dayData) => {
+            {journeyData.filter(d => d.day !== 'prelude').map((dayData) => {
               const status = getDayStatus(dayData.day);
               const isClickable = status === 'published';
               

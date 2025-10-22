@@ -10,8 +10,9 @@ import { AboutPage } from './pages/AboutPage';
 import { PreTripPage } from './pages/PreTripPage';
 import { IndiaInfoPage } from './pages/IndiaInfoPage';
 import { PreludePage } from './pages/PreludePage';
+import { GoodbyeSingaporePage } from './pages/GoodbyeSingaporePage';
 
-type Page = 'home' | 'post' | 'journal' | 'about' | 'pretrip' | 'indiainfo' | 'prelude';
+type Page = 'home' | 'post' | 'journal' | 'about' | 'pretrip' | 'indiainfo' | 'prelude' | 'goodbye-sg';
 
 interface AppState {
   currentPage: Page;
@@ -53,6 +54,8 @@ export default function App() {
         return <IndiaInfoPage onNavigate={handleNavigate} />;
       case 'prelude':
         return <PreludePage onNavigate={handleNavigate} />;
+      case 'goodbye-sg':
+        return <GoodbyeSingaporePage onNavigate={handleNavigate} />;
       default:
         return <HomePage onNavigate={handleNavigate} />;
     }

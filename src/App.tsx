@@ -15,7 +15,7 @@ type Page = 'home' | 'post' | 'journal' | 'about' | 'pretrip' | 'indiainfo' | 'p
 
 interface AppState {
   currentPage: Page;
-  currentDay?: number;
+  currentDay?: number | string;
 }
 
 export default function App() {
@@ -23,7 +23,7 @@ export default function App() {
     currentPage: 'home'
   });
 
-  const handleNavigate = (page: string, day?: number) => {
+  const handleNavigate = (page: string, day?: number | string) => {
     setAppState({
       currentPage: page as Page,
       currentDay: day

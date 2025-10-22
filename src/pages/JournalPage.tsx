@@ -4,7 +4,7 @@ import { journalConfig, getDayStatus, isPublished } from '../data/journalConfig'
 import { ImageCarousel } from '../components/journal/ImageCarousel';
 
 interface JournalPageProps {
-  onNavigate: (page: string, day?: number) => void;
+  onNavigate: (page: string, day?: number | string) => void;
 }
 
 interface DayData {

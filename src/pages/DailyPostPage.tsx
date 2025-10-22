@@ -8,8 +8,8 @@ import { getJournalPost } from '../data/journalPosts';
 import { isPublished } from '../data/journalConfig';
 
 interface DailyPostPageProps {
-  day: number;
-  onNavigate: (page: string, day?: number) => void;
+  day: number | string;
+  onNavigate: (page: string, day?: number | string) => void;
 }
 
 export function DailyPostPage({ day, onNavigate }: DailyPostPageProps) {

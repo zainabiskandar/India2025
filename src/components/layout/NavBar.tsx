@@ -100,45 +100,45 @@ export function NavBar({ currentPage, onNavigate }: NavBarProps) {
               />
 
               <div className="partner-logos flex items-center gap-3">
-                <a 
-                  href="https://www.isas.nus.edu.sg/" 
-                  target="_blank" 
+                <a
+                  href="https://www.isas.nus.edu.sg/"
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-opacity-50 rounded-sm" 
+                  className="flex items-center transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-opacity-50 rounded-sm"
                   style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.2))' }}
                   aria-label="Visit ISAS - Institute of South Asian Studies website"
                 >
-                  <img 
-                    src={isasLogo} 
+                  <img
+                    src={isasLogo}
                     alt="ISAS - Institute of South Asian Studies"
-                    className="h-5 w-auto transition-opacity duration-300"
-                    style={{ 
+                    className="h-7 w-auto transition-opacity duration-300"
+                    style={{
                       opacity: isScrolled ? '0.7' : '0.9',
                       filter: isScrolled ? 'none' : 'drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3))'
                     }}
                   />
                 </a>
-                
-                <div 
-                  className="w-px h-4" 
-                  style={{ 
-                    backgroundColor: isScrolled ? 'var(--divider-color)' : 'rgba(255, 255, 255, 0.3)' 
-                  }} 
+
+                <div
+                  className="w-px h-4"
+                  style={{
+                    backgroundColor: isScrolled ? 'var(--divider-color)' : 'rgba(255, 255, 255, 0.3)'
+                  }}
                 />
-                
-                <a 
-                  href="https://www.facebook.com/p/Singapore-India-Partnership-Foundation-61554203843763/" 
-                  target="_blank" 
+
+                <a
+                  href="https://www.facebook.com/p/Singapore-India-Partnership-Foundation-61554203843763/"
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-opacity-50 rounded-sm" 
+                  className="flex items-center transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-opacity-50 rounded-sm"
                   style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.2))' }}
                   aria-label="Visit SIPF - Singapore India Partnership Foundation Facebook page"
                 >
-                  <img 
-                    src={sipfLogo} 
+                  <img
+                    src={sipfLogo}
                     alt="SIPF - Singapore India Partnership Foundation"
-                    className="h-5 w-auto transition-opacity duration-300"
-                    style={{ 
+                    className="h-7 w-auto transition-opacity duration-300"
+                    style={{
                       opacity: isScrolled ? '0.7' : '0.9',
                       filter: isScrolled ? 'none' : 'drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3))'
                     }}

@@ -184,7 +184,7 @@ export function PreludePage({ onNavigate }: PreludePageProps) {
         that follow, I will revisit them one by one: what we saw, who we met, and what stayed with me.
       </p>
       <button
-        onClick={() => onNavigate('post', 1)}
+        onClick={() => onNavigate('goodbye-sg')}
         className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-colors text-sm"
         style={{
           borderColor: 'var(--saffron)',
@@ -194,9 +194,9 @@ export function PreludePage({ onNavigate }: PreludePageProps) {
           fontFamily: "'Work Sans', system-ui, sans-serif",
           fontSize: 'clamp(12px, 1.5vw, 14px)'
         }}
-        aria-label="Begin Day 1 – Chennai"
+        aria-label="Continue to Goodbye Singapore"
       >
-        <span>Begin Day 1 – Chennai</span>
+        <span>Continue: Goodbye Singapore</span>
         <span aria-hidden="true">→</span>
       </button>
     </main>

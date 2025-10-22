@@ -111,7 +111,7 @@ export function NavBar({ currentPage, onNavigate }: NavBarProps) {
                   <img
                     src={isasLogo}
                     alt="ISAS - Institute of South Asian Studies"
-                    className="h-7 w-auto transition-opacity duration-300"
+                    className="h-6 w-auto transition-opacity duration-300"
                     style={{
                       opacity: isScrolled ? '0.7' : '0.9',
                       filter: isScrolled ? 'none' : 'drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3))'
@@ -137,7 +137,7 @@ export function NavBar({ currentPage, onNavigate }: NavBarProps) {
                   <img
                     src={sipfLogo}
                     alt="SIPF - Singapore India Partnership Foundation"
-                    className="h-7 w-auto transition-opacity duration-300"
+                    className="h-6 w-auto transition-opacity duration-300"
                     style={{
                       opacity: isScrolled ? '0.7' : '0.9',
                       filter: isScrolled ? 'none' : 'drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3))'

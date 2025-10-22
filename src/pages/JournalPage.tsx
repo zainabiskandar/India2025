@@ -22,9 +22,9 @@ export function JournalPage({ onNavigate }: JournalPageProps) {
       } else if (day === 'prelude') {
         onNavigate('prelude');
       } else if (day === 'goodbye-sg') {
-        onNavigate('post', 0);
+        onNavigate('post', 'goodbye-sg');
       } else if (day === 'goodbye-india') {
-        onNavigate('post', 11);
+        onNavigate('post', 'goodbye-india');
       }
     }
   };

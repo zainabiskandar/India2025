@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import isasLogo from '../../assets/NUS ISAS Logo.jpg';
+import isasLogo from '../../assets/NUS ISAS Logo.png';
 import sipfLogo from '../../assets/dc27718dc48aedf9e62fdd3712da801632bf1f39.png';
 import indiaExpLogo from '../../assets/The India Experience Logo copy.png';
 import { Menu, X } from 'lucide-react';

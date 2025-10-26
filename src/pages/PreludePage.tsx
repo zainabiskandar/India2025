@@ -73,7 +73,7 @@ export function PreludePage({ onNavigate }: PreludePageProps) {
           under the surface.
         </p>
 
-        <div style={{ height: '1px', backgroundColor: 'var(--navy)', margin: '2.5rem 0 1.5rem 0', opacity: '0.3' }} />
+        <div style={{ height: '1px', backgroundColor: 'var(--navy)', margin: '2.5rem 0 1.5rem 0', opacity: '0.3', width: '4rem' }} />
         <p>
           My journey took me to the south of India, to Tamil Nadu, to the cities of Chennai and
           Coimbatore. I had not given much thought to the cities before the trip; my imagination
@@ -93,7 +93,7 @@ export function PreludePage({ onNavigate }: PreludePageProps) {
           I truly lived in India for ten days. And in return, India lived in me.
         </p>
 
-        <div style={{ height: '1px', backgroundColor: 'var(--navy)', margin: '2.5rem 0 1.5rem 0', opacity: '0.3' }} />
+        <div style={{ height: '1px', backgroundColor: 'var(--navy)', margin: '2.5rem 0 1.5rem 0', opacity: '0.3', width: '4rem' }} />
         <p>
           I went to India because many of my close friends call it home. They have always been generous with their stories of their
           motherland, with its rhythms and colours. We had always dreamed of travelling there
@@ -107,7 +107,7 @@ export function PreludePage({ onNavigate }: PreludePageProps) {
           our own stories. To listen to another's story is a privilege; to be welcomed into their time and space is grace.
         </p>
 
-        <div style={{ height: '1px', backgroundColor: 'var(--navy)', margin: '2.5rem 0 1.5rem 0', opacity: '0.3' }} />
+        <div style={{ height: '1px', backgroundColor: 'var(--navy)', margin: '2.5rem 0 1.5rem 0', opacity: '0.3', width: '4rem' }} />
         <p>
           I learned about service through hospitality. Every place we visited offered us something—chai,
           biscuits, time, attention. Gratitude became second nature. Humility came easily there; you
@@ -117,7 +117,7 @@ export function PreludePage({ onNavigate }: PreludePageProps) {
           a shared reverence, a humility before the Divine.
         </p>
 
-        <div style={{ height: '1px', backgroundColor: 'var(--navy)', margin: '2.5rem 0 1.5rem 0', opacity: '0.3' }} />
+        <div style={{ height: '1px', backgroundColor: 'var(--navy)', margin: '2.5rem 0 1.5rem 0', opacity: '0.3', width: '4rem' }} />
         <p>
           Since returning, I feel calm. My soul feels nourished. For months, I had longed to go somewhere unfamiliar, to be re-enchanted
           with the world, and Allah granted that wish. What I want to keep from India is its spirit of

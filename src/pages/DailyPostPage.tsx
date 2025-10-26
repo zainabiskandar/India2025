@@ -70,84 +70,72 @@ export function DailyPostPage({ day, onNavigate }: DailyPostPageProps) {
     );
   }
 
+  const line = { height: '2px', backgroundColor: 'var(--saffron)' };
+
   return (
     <div className="min-h-screen" style={{ backgroundColor: 'var(--bg)' }}>
-      <article className="container-mobile md:container-desktop py-8 max-w-4xl mx-auto">
-        <PrivacyNote />
+      <PrivacyNote />
 
-        {/* Sticky Back Button for Mobile */}
-        <div className="fixed bottom-6 right-6 md:hidden z-50">
-          <Button
-            onClick={() => onNavigate('home')}
-            className="rounded-full p-3 shadow-lg"
-            style={{
-              backgroundColor: 'var(--saffron)',
-              color: 'var(--text)'
-            }}
-          >
-            <Home className="h-5 w-5" />
-          </Button>
-        </div>
+      {/* Sticky Back Button for Mobile */}
+      <div className="fixed bottom-6 right-6 md:hidden z-50">
+        <Button
+          onClick={() => onNavigate('home')}
+          className="rounded-full p-3 shadow-lg"
+          style={{
+            backgroundColor: 'var(--saffron)',
+            color: 'var(--text)'
+          }}
+        >
+          <Home className="h-5 w-5" />
+        </Button>
+      </div>
 
-        {/* Page Header */}
-        <div className="text-center mb-12">
-          <h1 className="mb-4" style={{ color: 'var(--navy)' }}>
-            Travel Journal
-          </h1>
-          <div className="flex justify-center items-center gap-3 mb-8">
-            <span className="text-2xl">✍🏻</span>
-            <div className="w-16 h-px" style={{ backgroundColor: 'var(--saffron)' }}></div>
-            <span className="text-2xl">📖</span>
-          </div>
-        </div>
-
+      <main className="max-w-3xl mx-auto px-6 md:px-6 py-12 md:py-16">
         {/* Header */}
-        <header className="mb-8">
-          <h1
-            className="mb-4 font-bold"
-            style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontWeight: '600',
-              fontStyle: 'italic',
-              color: 'var(--text)'
-            }}
-          >
-            {currentPost.title}
-          </h1>
-        </header>
+        <h1
+          className="mb-2"
+          style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: 'clamp(28px, 4vw, 48px)',
+            lineHeight: '1.4',
+            color: 'var(--navy)',
+            fontWeight: '700'
+          }}
+        >
+          {currentPost.title}
+        </h1>
+        <div style={line} className="w-16 mb-8" />
 
         {/* Journal Content */}
-        <article
-          className="max-w-3xl mx-auto mb-16 prose-custom"
+        <section
+          className="space-y-6"
           style={{
             color: 'var(--text)',
-            lineHeight: '1.8',
+            lineHeight: '1.6',
             fontFamily: "'Work Sans', system-ui, sans-serif",
             fontSize: 'var(--body)'
           }}
         >
           {currentPost.content.split('\n\n').map((paragraph, index) => (
-            <p key={index} className="mb-6">
-              {paragraph}
-            </p>
+            <p key={index}>{paragraph}</p>
           ))}
-        </article>
+        </section>
 
         {/* Image Gallery Placeholder */}
         <section className="mt-16">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-4xl">
-            <div 
+          <div className="grid gap-6 md:grid-cols-2 max-w-4xl">
+            <div
               className="aspect-[4/3] rounded-md flex items-center justify-center border"
               style={{ backgroundColor: 'var(--subtle)', borderColor: 'var(--border)' }}
             >
               <div className="text-center">
-                <p 
+                <p
                   className="small mb-2"
                   style={{ color: 'var(--muted)' }}
                 >
                   Photo placeholder
                 </p>
-                <p 
+                <p
                   className="small"
                   style={{ color: 'var(--muted)' }}
                 >
@@ -155,18 +143,18 @@ export function DailyPostPage({ day, onNavigate }: DailyPostPageProps) {
                 </p>
               </div>
             </div>
-            <div 
+            <div
               className="aspect-[3/2] rounded-md flex items-center justify-center border"
               style={{ backgroundColor: 'var(--subtle)', borderColor: 'var(--border)' }}
             >
               <div className="text-center">
-                <p 
+                <p
                   className="small mb-2"
                   style={{ color: 'var(--muted)' }}
                 >
                   Photo placeholder
                 </p>
-                <p 
+                <p
                   className="small"
                   style={{ color: 'var(--muted)' }}
                 >
@@ -175,7 +163,7 @@ export function DailyPostPage({ day, onNavigate }: DailyPostPageProps) {
               </div>
             </div>
           </div>
-          <p 
+          <p
             className="small mt-4"
             style={{ color: 'var(--muted)' }}
           >
@@ -183,59 +171,65 @@ export function DailyPostPage({ day, onNavigate }: DailyPostPageProps) {
           </p>
         </section>
 
-        {/* Navigation */}
-        <nav 
-          className="flex justify-between items-center mt-16 pt-8 border-t"
-          style={{ borderColor: 'var(--border)' }}
-        >
-          <div>
+        {/* Navigation Buttons */}
+        <div className="mt-10 md:mt-12 space-y-4">
+          {hasNext && getAdjacentDay('next') && (
+            <button
+              onClick={() => onNavigate('post', getAdjacentDay('next')!)}
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-colors text-sm"
+              style={{
+                borderColor: 'var(--saffron)',
+                color: 'var(--navy)',
+                background: 'var(--saffron)',
+                cursor: 'pointer',
+                fontFamily: "'Work Sans', system-ui, sans-serif",
+                fontSize: 'clamp(12px, 1.5vw, 14px)'
+              }}
+              aria-label={`Continue to Day ${getAdjacentDay('next')}`}
+            >
+              <span>Continue: Day {getAdjacentDay('next')}</span>
+              <span aria-hidden="true">→</span>
+            </button>
+          )}
+
+          <div className="flex gap-4">
             {hasPrevious && getAdjacentDay('prev') && (
-              <Button
-                variant="outline"
+              <button
                 onClick={() => onNavigate('post', getAdjacentDay('prev')!)}
-                className="group border transition-colors"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-colors text-sm"
                 style={{
                   borderColor: 'var(--border)',
                   color: 'var(--text)',
-                  fontFamily: "'Inter', system-ui, sans-serif"
+                  background: 'transparent',
+                  cursor: 'pointer',
+                  fontFamily: "'Work Sans', system-ui, sans-serif",
+                  fontSize: 'clamp(12px, 1.5vw, 14px)'
                 }}
+                aria-label={`Back to Day ${getAdjacentDay('prev')}`}
               >
-                <ChevronLeft className="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform" />
-                Day {getAdjacentDay('prev')}
-              </Button>
+                <span aria-hidden="true">←</span>
+                <span>Day {getAdjacentDay('prev')}</span>
+              </button>
             )}
+
+            <button
+              onClick={() => onNavigate('places')}
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-colors text-sm"
+              style={{
+                borderColor: 'var(--border)',
+                color: 'var(--text)',
+                background: 'transparent',
+                cursor: 'pointer',
+                fontFamily: "'Work Sans', system-ui, sans-serif",
+                fontSize: 'clamp(12px, 1.5vw, 14px)'
+              }}
+              aria-label="View all journal posts"
+            >
+              <span>All Posts</span>
+            </button>
           </div>
-          
-          <Button 
-            variant="ghost" 
-            onClick={() => onNavigate('places')}
-            className="hidden md:block transition-colors caption"
-            style={{
-              color: 'var(--muted)'
-            }}
-          >
-            All Posts
-          </Button>
-          
-          <div>
-            {hasNext && getAdjacentDay('next') && (
-              <Button
-                variant="outline"
-                onClick={() => onNavigate('post', getAdjacentDay('next')!)}
-                className="group border transition-colors"
-                style={{
-                  borderColor: 'var(--border)',
-                  color: 'var(--text)',
-                  fontFamily: "'Inter', system-ui, sans-serif"
-                }}
-              >
-                Day {getAdjacentDay('next')}
-                <ChevronRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            )}
-          </div>
-        </nav>
-      </article>
+        </div>
+      </main>
     </div>
   );
 }

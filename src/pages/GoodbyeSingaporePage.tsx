@@ -121,22 +121,42 @@ export function GoodbyeSingaporePage({ onNavigate }: GoodbyeSingaporePageProps) 
       >
         A few hours later, I am airborne, en route to Incredible India.
       </p>
-      <button
-        onClick={() => onNavigate('post', 1)}
-        className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-colors text-sm"
-        style={{
-          borderColor: 'var(--saffron)',
-          color: 'var(--navy)',
-          background: 'var(--saffron)',
-          cursor: 'pointer',
-          fontFamily: "'Work Sans', system-ui, sans-serif",
-          fontSize: 'clamp(12px, 1.5vw, 14px)'
-        }}
-        aria-label="Begin Day 1 – Chennai"
-      >
-        <span>Begin Day 1 – Chennai</span>
-        <span aria-hidden="true">→</span>
-      </button>
+
+      <div className="flex gap-4 items-center">
+        <button
+          onClick={() => onNavigate('prelude')}
+          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-colors text-sm"
+          style={{
+            borderColor: 'var(--border)',
+            color: 'var(--text)',
+            background: 'transparent',
+            cursor: 'pointer',
+            fontFamily: "'Work Sans', system-ui, sans-serif",
+            fontSize: 'clamp(12px, 1.5vw, 14px)'
+          }}
+          aria-label="Back to Prelude"
+        >
+          <span aria-hidden="true">←</span>
+          <span>Prelude</span>
+        </button>
+
+        <button
+          onClick={() => onNavigate('post', 1)}
+          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-colors text-sm"
+          style={{
+            borderColor: 'var(--saffron)',
+            color: 'var(--navy)',
+            background: 'var(--saffron)',
+            cursor: 'pointer',
+            fontFamily: "'Work Sans', system-ui, sans-serif",
+            fontSize: 'clamp(12px, 1.5vw, 14px)'
+          }}
+          aria-label="Begin Day 1 – Chennai"
+        >
+          <span>Continue: Day 1</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
     </main>
   );
 }

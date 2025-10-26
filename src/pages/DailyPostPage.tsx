@@ -21,8 +21,32 @@ export function DailyPostPage({ day, onNavigate }: DailyPostPageProps) {
     return isPublished(targetDay) ? targetDay : null;
   };
 
-  const hasPrevious = getAdjacentDay('prev') !== null;
-  const hasNext = getAdjacentDay('next') !== null;
+  const getPreviousLink = (): { type: 'page' | 'post'; value: string | number; label: string } | null => {
+    if (typeof day === 'number' && day === 1) {
+      return { type: 'page', value: 'goodbye-sg', label: 'Goodbye Singapore' };
+    }
+    const prevDay = getAdjacentDay('prev');
+    if (prevDay) {
+      return { type: 'post', value: prevDay, label: `Day ${prevDay}` };
+    }
+    return null;
+  };
+
+  const getNextLink = (): { type: 'page' | 'post'; value: string | number; label: string } | null => {
+    if (typeof day === 'number' && day === 10) {
+      if (isPublished('goodbye-india')) {
+        return { type: 'page', value: 'goodbye-india', label: 'Goodbye India' };
+      }
+    }
+    const nextDay = getAdjacentDay('next');
+    if (nextDay) {
+      return { type: 'post', value: nextDay, label: `Day ${nextDay}` };
+    }
+    return null;
+  };
+
+  const previousLink = getPreviousLink();
+  const nextLink = getNextLink();
 
   if (!currentPost || !published) {
     return (
@@ -172,30 +196,13 @@ export function DailyPostPage({ day, onNavigate }: DailyPostPageProps) {
         </section>
 
         {/* Navigation Buttons */}
-        <div className="mt-10 md:mt-12 space-y-4">
-          {hasNext && getAdjacentDay('next') && (
-            <button
-              onClick={() => onNavigate('post', getAdjacentDay('next')!)}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-colors text-sm"
-              style={{
-                borderColor: 'var(--saffron)',
-                color: 'var(--navy)',
-                background: 'var(--saffron)',
-                cursor: 'pointer',
-                fontFamily: "'Work Sans', system-ui, sans-serif",
-                fontSize: 'clamp(12px, 1.5vw, 14px)'
-              }}
-              aria-label={`Continue to Day ${getAdjacentDay('next')}`}
-            >
-              <span>Continue: Day {getAdjacentDay('next')}</span>
-              <span aria-hidden="true">→</span>
-            </button>
-          )}
-
-          <div className="flex gap-4">
-            {hasPrevious && getAdjacentDay('prev') && (
+        <div className="mt-10 md:mt-12">
+          <div className="flex gap-4 items-center flex-wrap">
+            {previousLink && (
               <button
-                onClick={() => onNavigate('post', getAdjacentDay('prev')!)}
+                onClick={() => previousLink.type === 'page'
+                  ? onNavigate(previousLink.value as string)
+                  : onNavigate('post', previousLink.value)}
                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-colors text-sm"
                 style={{
                   borderColor: 'var(--border)',
@@ -205,29 +212,50 @@ export function DailyPostPage({ day, onNavigate }: DailyPostPageProps) {
                   fontFamily: "'Work Sans', system-ui, sans-serif",
                   fontSize: 'clamp(12px, 1.5vw, 14px)'
                 }}
-                aria-label={`Back to Day ${getAdjacentDay('prev')}`}
+                aria-label={`Back to ${previousLink.label}`}
               >
                 <span aria-hidden="true">←</span>
-                <span>Day {getAdjacentDay('prev')}</span>
+                <span>{previousLink.label}</span>
               </button>
             )}
 
-            <button
-              onClick={() => onNavigate('places')}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-colors text-sm"
-              style={{
-                borderColor: 'var(--border)',
-                color: 'var(--text)',
-                background: 'transparent',
-                cursor: 'pointer',
-                fontFamily: "'Work Sans', system-ui, sans-serif",
-                fontSize: 'clamp(12px, 1.5vw, 14px)'
-              }}
-              aria-label="View all journal posts"
-            >
-              <span>All Posts</span>
-            </button>
+            {nextLink && (
+              <button
+                onClick={() => nextLink.type === 'page'
+                  ? onNavigate(nextLink.value as string)
+                  : onNavigate('post', nextLink.value)}
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-colors text-sm"
+                style={{
+                  borderColor: 'var(--saffron)',
+                  color: 'var(--navy)',
+                  background: 'var(--saffron)',
+                  cursor: 'pointer',
+                  fontFamily: "'Work Sans', system-ui, sans-serif",
+                  fontSize: 'clamp(12px, 1.5vw, 14px)'
+                }}
+                aria-label={`Continue to ${nextLink.label}`}
+              >
+                <span>Continue: {nextLink.label}</span>
+                <span aria-hidden="true">→</span>
+              </button>
+            )}
           </div>
+
+          <button
+            onClick={() => onNavigate('places')}
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-colors text-sm mt-4"
+            style={{
+              borderColor: 'var(--border)',
+              color: 'var(--muted)',
+              background: 'transparent',
+              cursor: 'pointer',
+              fontFamily: "'Work Sans', system-ui, sans-serif",
+              fontSize: 'clamp(12px, 1.5vw, 14px)'
+            }}
+            aria-label="View all journal posts"
+          >
+            <span>All Posts</span>
+          </button>
         </div>
       </main>
     </div>

@@ -1,8 +1,6 @@
 import React from 'react';
-import { Tag } from '../components/Tag';
 import { Button } from '../components/ui/button';
 import { PrivacyNote } from '../components/PrivacyNote';
-import { EditorialJournalCard } from '../components/journal/EditorialJournalCard';
 import { ChevronLeft, ChevronRight, Chrome as Home } from 'lucide-react';
 import { getJournalPost } from '../data/journalPosts';
 import { isPublished } from '../data/journalConfig';
@@ -104,7 +102,7 @@ export function DailyPostPage({ day, onNavigate }: DailyPostPageProps) {
         </div>
 
         {/* Header */}
-        <header className="mb-12">
+        <header className="mb-8">
           <h1
             className="mb-4 font-bold"
             style={{
@@ -116,22 +114,24 @@ export function DailyPostPage({ day, onNavigate }: DailyPostPageProps) {
           >
             {currentPost.title}
           </h1>
-          <div className="flex flex-wrap gap-2">
-            {currentPost.tags.map((tag) => (
-              <Tag key={tag}>{tag}</Tag>
-            ))}
-          </div>
         </header>
 
-        {/* Editorial Journal Card */}
-        <EditorialJournalCard
-          whereWeWent={currentPost.whereWeWent}
-          oneConversation={currentPost.conversation}
-          oneInsight={currentPost.numberFact}
-          myReflection={currentPost.reflection}
-          tomorrowIllLookFor={currentPost.tomorrow}
-          className="mb-16"
-        />
+        {/* Journal Content */}
+        <article
+          className="max-w-3xl mx-auto mb-16 prose-custom"
+          style={{
+            color: 'var(--text)',
+            lineHeight: '1.8',
+            fontFamily: "'Work Sans', system-ui, sans-serif",
+            fontSize: 'var(--body)'
+          }}
+        >
+          {currentPost.content.split('\n\n').map((paragraph, index) => (
+            <p key={index} className="mb-6">
+              {paragraph}
+            </p>
+          ))}
+        </article>
 
         {/* Image Gallery Placeholder */}
         <section className="mt-16">

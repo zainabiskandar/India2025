@@ -9,7 +9,7 @@ export interface DayConfig {
 export const journalConfig: DayConfig[] = [
   { day: 'prelude', label: 'Prelude: Returning', status: 'published' },
   { day: 'goodbye-sg', label: 'Goodbye Singapore', status: 'published' },
-  { day: 1, label: 'Day 1', status: 'planned' },
+  { day: 1, label: 'Day 1', status: 'published' },
   { day: 2, label: 'Day 2', status: 'planned' },
   { day: 3, label: 'Day 3', status: 'planned' },
   { day: 4, label: 'Day 4', status: 'planned' },

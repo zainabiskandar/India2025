@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button } from '../components/ui/button';
-import { PrivacyNote } from '../components/PrivacyNote';
-import { ChevronLeft, ChevronRight, Chrome as Home } from 'lucide-react';
+import { Chrome as Home } from 'lucide-react';
 import { getJournalPost } from '../data/journalPosts';
 import { isPublished } from '../data/journalConfig';
 
@@ -33,14 +32,13 @@ export function DailyPostPage({ day, onNavigate }: DailyPostPageProps) {
   };
 
   const getNextLink = (): { type: 'page' | 'post'; value: string | number; label: string } | null => {
-    if (typeof day === 'number' && day === 10) {
-      if (isPublished('goodbye-india')) {
+    if (typeof day === 'number') {
+      if (day === 10) {
         return { type: 'page', value: 'goodbye-india', label: 'Goodbye India' };
       }
-    }
-    const nextDay = getAdjacentDay('next');
-    if (nextDay) {
-      return { type: 'post', value: nextDay, label: `Day ${nextDay}` };
+      if (day < 10) {
+        return { type: 'post', value: day + 1, label: `Day ${day + 1}` };
+      }
     }
     return null;
   };
@@ -98,7 +96,6 @@ export function DailyPostPage({ day, onNavigate }: DailyPostPageProps) {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: 'var(--bg)' }}>
-      <PrivacyNote />
 
       {/* Sticky Back Button for Mobile */}
       <div className="fixed bottom-6 right-6 md:hidden z-50">
@@ -241,21 +238,6 @@ export function DailyPostPage({ day, onNavigate }: DailyPostPageProps) {
             )}
           </div>
 
-          <button
-            onClick={() => onNavigate('places')}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-colors text-sm mt-4"
-            style={{
-              borderColor: 'var(--border)',
-              color: 'var(--muted)',
-              background: 'transparent',
-              cursor: 'pointer',
-              fontFamily: "'Work Sans', system-ui, sans-serif",
-              fontSize: 'clamp(12px, 1.5vw, 14px)'
-            }}
-            aria-label="View all journal posts"
-          >
-            <span>All Posts</span>
-          </button>
         </div>
       </main>
     </div>

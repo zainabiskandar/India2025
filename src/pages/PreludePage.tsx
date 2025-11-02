@@ -14,12 +14,11 @@ export function PreludePage({ onNavigate }: PreludePageProps) {
         style={{
           color: 'var(--muted)',
           fontSize: 'clamp(12px, 1.5vw, 15px)',
-          fontFamily: "'Work Sans', system-ui, sans-serif"
+          fontFamily: "'Work Sans', system-ui, sans-serif",
+          letterSpacing: '0.01em'
         }}
       >
-        Note: I did not manage to update this journal during the 10 days in India.
-        I was fully immersed, learning and living in the world around me. What follows is written
-        after returning home, as I begin to remember and reflect.
+        Chennai & Coimbatore · 8–17 October 2025
       </p>
 
       <h1

@@ -120,7 +120,7 @@ export function PreludePage({ onNavigate }: PreludePageProps) {
         <div style={{ height: '1px', backgroundColor: 'var(--navy)', margin: '2.5rem 0 1.5rem 0', opacity: '0.4', width: '4rem' }} />
         <p>
           Since returning, I feel calm. My soul feels nourished. For months, I had longed to go somewhere unfamiliar, to be re-enchanted
-          with the world, and Allah granted that wish. What I want to keep from India is its spirit of
+          with the world, and my wish was granted. What I want to keep from India is its spirit of
           hospitality and its rhythm of community. Even in Singapore, there are always new people to
           meet, stories to hear, places to discover. I want to live in motion again—developing,
           pulsing, alive.

@@ -48,7 +48,7 @@ export function PreludePage({ onNavigate }: PreludePageProps) {
 
         <p>
           It is 12:45 a.m. on the 22nd of October. I returned home from India on Saturday morning.
-          I slept the entire day, drifted through Sunday, and let Monday pass quietly—it was Diwali,
+          I slept the entire day, drifted through Sunday, and let Monday pass quietly—it was Deepavali,
           after all, and a national holiday. Since this week is home-based learning, I have been
           taking things slowly.
         </p>

@@ -59,6 +59,9 @@ export function GoodbyeSingaporePage({ onNavigate }: GoodbyeSingaporePageProps) 
         <p>
           That quiet suggestion, offered over breakfast in the calm before departure, was the best parting gift my parents could have given me.
         </p>
+        
+              >
+        A few hours later, I am airborne, en route to Incredible India.
       </section>
 
       <section className="mt-16">

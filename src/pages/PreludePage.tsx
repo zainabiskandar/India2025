@@ -124,6 +124,12 @@ export function PreludePage({ onNavigate }: PreludePageProps) {
           meet, stories to hear, places to discover. I want to live in motion again—developing,
           pulsing, alive.
         </p>
+
+        <div style={{ height: '1px', backgroundColor: 'var(--navy)', margin: '2.5rem 0 1.5rem 0', opacity: '0.4', width: '4rem' }} />
+        <p>
+          As I settle back home, I want to hold on to the traces of those ten days. In the pages
+          that follow, I will revisit them one by one: what we saw, who we met, and what stayed with me.
+        </p>
       </section>
 
       <p
@@ -135,8 +141,6 @@ export function PreludePage({ onNavigate }: PreludePageProps) {
           fontSize: 'var(--body)'
         }}
       >
-        As I settle back home, I want to hold on to the traces of those ten days. In the pages
-        that follow, I will revisit them one by one: what we saw, who we met, and what stayed with me.
       </p>
       <button
         onClick={() => onNavigate('goodbye-sg')}

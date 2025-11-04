@@ -24,9 +24,10 @@ export default function App() {
     currentPage: 'home'
   });
 
-  const handleNavigate = (page: string, day?: number | string) => {
+  // Narrowed page parameter to the Page union to avoid invalid page strings
+  const handleNavigate = (page: Page, day?: number | string) => {
     setAppState({
-      currentPage: page as Page,
+      currentPage: page,
       currentDay: day
     });
     // Scroll to top when navigating to a new page
@@ -65,9 +66,7 @@ export default function App() {
     <div className="min-h-screen flex flex-col bg-background text-foreground font-['Work_Sans',system-ui,sans-serif]">
       <a href="#main-content" className="skip-link">Skip to main content</a>
       <NavBar currentPage={appState.currentPage} onNavigate={handleNavigate} />
-      <main id="main-content" className={`flex-1 ${appState.currentPage !== 'home' ? 'pt-20' : ''}`}>
-        {renderCurrentPage()}
-      </main>
+      <main id="main-content" className={`flex-1 ${appState.currentPage !== 'home' ? 'pt-20' : ''}`}>{renderCurrentPage()}</main>
       <Footer onNavigate={handleNavigate} />
     </div>
   );

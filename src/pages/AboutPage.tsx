@@ -7,8 +7,8 @@ interface AboutPageProps {
 export function AboutPage({ onNavigate }: AboutPageProps) {
   return (
     <div className="min-h-screen py-12 bg-gradient-to-b from-[var(--navy)]/5 to-white">
-      <div className="container-mobile md:container-desktop">
-        <div className="max-w-6xl mx-auto">
+      <div className="container-desktop">
+        <div className="max-w-4xl mx-auto">
 
           {/* Header Section */}
           <div className="text-center mb-12">
@@ -27,7 +27,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
           {/* Personal Welcome */}
           <div className="mb-20">
             <div
-              className="prose prose-lg max-w-none"
+              className="prose prose-lg max-w-4xl mx-auto"
               style={{
                 color: 'var(--text)',
                 lineHeight: '1.8',

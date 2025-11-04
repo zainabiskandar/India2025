@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ThemeProvider } from './contexts/ThemeContext';
 import { NavBar } from './components/layout/NavBar';
 import { Footer } from './components/layout/Footer';
 import { HomePage } from './pages/HomePage';
@@ -63,11 +64,13 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground font-['Work_Sans',system-ui,sans-serif]">
-      <a href="#main-content" className="skip-link">Skip to main content</a>
-      <NavBar currentPage={appState.currentPage} onNavigate={handleNavigate} />
-      <main id="main-content" className={`flex-1 ${appState.currentPage !== 'home' ? 'pt-20' : ''}`}>{renderCurrentPage()}</main>
-      <Footer onNavigate={handleNavigate} />
-    </div>
+    <ThemeProvider>
+      <div className="min-h-screen flex flex-col bg-background text-foreground font-['Work_Sans',system-ui,sans-serif]">
+        <a href="#main-content" className="skip-link">Skip to main content</a>
+        <NavBar currentPage={appState.currentPage} onNavigate={handleNavigate} />
+        <main id="main-content" className={`flex-1 ${appState.currentPage !== 'home' ? 'pt-20' : ''}`}>{renderCurrentPage()}</main>
+        <Footer onNavigate={handleNavigate} />
+      </div>
+    </ThemeProvider>
   );
 }

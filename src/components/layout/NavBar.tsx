@@ -3,6 +3,7 @@ import isasLogo from '../../assets/NUS ISAS Logo copy.png';
 import sipfLogo from '../../assets/dc27718dc48aedf9e62fdd3712da801632bf1f39.png';
 import indiaExpLogo from '../../assets/The India Experience Logo copy.png';
 import { Menu, X } from 'lucide-react';
+import { ThemeToggle } from './ThemeToggle';
 
 interface NavBarProps {
   currentPage: string;
@@ -150,6 +151,7 @@ export function NavBar({ currentPage, onNavigate }: NavBarProps) {
 
           {/* Desktop Navigation - Right Aligned */}
           <div className="hidden md:flex items-center gap-4">
+            <ThemeToggle isScrolled={isScrolled} />
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -170,8 +172,9 @@ export function NavBar({ currentPage, onNavigate }: NavBarProps) {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden nav-menu-toggle">
+          {/* Mobile Menu Button and Theme Toggle */}
+          <div className="md:hidden nav-menu-toggle flex items-center gap-2">
+            <ThemeToggle isScrolled={isScrolled} />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2 hover:bg-[var(--subtle)] rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-opacity-50"

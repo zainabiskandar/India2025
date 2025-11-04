@@ -104,8 +104,10 @@ export function JournalPage({ onNavigate }: JournalPageProps) {
                     fontFamily: "'Cormorant Garamond', serif",
                     fontSize: 'clamp(1.25rem, 3.5vw, 1.875rem)',
                     lineHeight: '1.3',
-                    wordBreak: 'break-word',
-                    hyphens: 'auto'
+                    wordBreak: 'keep-all',
+                    overflowWrap: 'normal',
+                    hyphens: 'none',
+                    whiteSpace: 'normal'
                   }}
                 >
                   Prelude: Returning
@@ -122,7 +124,7 @@ export function JournalPage({ onNavigate }: JournalPageProps) {
           </div>
 
           {/* Calendar Grid - 2x5 on desktop, 2-column stack on mobile */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6 max-w-6xl mx-auto" style={{ gridAutoRows: 'minmax(180px, auto)' }}>
             {journeyData.filter(d => d.day !== 'prelude').map((dayData) => {
               const status = getDayStatus(dayData.day);
               const isClickable = status === 'published';
@@ -196,8 +198,10 @@ export function JournalPage({ onNavigate }: JournalPageProps) {
                       fontFamily: "'Cormorant Garamond', serif",
                       fontSize: 'clamp(1.25rem, 3.5vw, 1.875rem)',
                       lineHeight: '1.3',
-                      wordBreak: 'break-word',
-                      hyphens: 'auto'
+                      wordBreak: 'keep-all',
+                      overflowWrap: 'normal',
+                      hyphens: 'none',
+                      whiteSpace: 'normal'
                     }}
                   >
                     {dayData.label}

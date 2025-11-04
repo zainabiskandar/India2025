@@ -15,19 +15,19 @@ interface PostCardProps {
   tags?: string[];
 }
 
-export function PostCard({ 
-  title, 
-  date, 
-  summary, 
-  day, 
-  onReadPost, 
-  imageUrl, 
+export function PostCard({
+  title,
+  date,
+  summary,
+  day,
+  onReadPost,
+  imageUrl,
   imageAlt,
   variant = 'text-only',
   tags = []
 }: PostCardProps) {
   return (
-    <Card className="h-full hover:shadow-md transition-shadow border" style={{ borderColor: 'var(--border)' }}>
+    <Card className="h-full hover:shadow-md transition-shadow border" style={{ borderColor: 'var(--border)', minWidth: '280px' }}>
       {variant === 'image-top' && imageUrl && (
         <div className="aspect-[4/3] overflow-hidden rounded-t-md">
           <ImageWithFallback 
@@ -51,27 +51,41 @@ export function PostCard({
         
         <div className="flex-1 flex flex-col">
           <div className="flex-1">
-            <h3 
+            <h3
               className="mb-2 font-bold"
-              style={{ 
+              style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontWeight: '600',
                 fontStyle: 'italic',
-                color: 'var(--text)'
+                color: 'var(--text)',
+                fontSize: 'clamp(1.125rem, 2.5vw, 1.5rem)',
+                lineHeight: '1.4',
+                wordBreak: 'keep-all',
+                overflowWrap: 'normal',
+                hyphens: 'none'
               }}
             >
               {title}
             </h3>
-            <p 
+            <p
               className="small mb-3"
-              style={{ color: 'var(--muted)' }}
+              style={{
+                color: 'var(--muted)',
+                fontSize: 'clamp(0.875rem, 1.75vw, 1rem)',
+                whiteSpace: 'nowrap'
+              }}
             >
               {date}
             </p>
             <p
               className="caption mb-4 flex-1"
               style={{
-                color: 'var(--muted)'
+                color: 'var(--muted)',
+                fontSize: 'clamp(0.875rem, 1.75vw, 1rem)',
+                lineHeight: '1.6',
+                wordBreak: 'keep-all',
+                overflowWrap: 'break-word',
+                hyphens: 'none'
               }}
             >
               {summary}

@@ -123,8 +123,8 @@ export function JournalPage({ onNavigate }: JournalPageProps) {
             </button>
           </div>
 
-          {/* Calendar Grid - 2x5 on desktop, 2-column stack on mobile */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6 max-w-6xl mx-auto" style={{ gridAutoRows: 'minmax(180px, auto)' }}>
+          {/* Calendar Grid - 4 columns on desktop, responsive on smaller screens */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8 max-w-6xl mx-auto" style={{ gridAutoRows: 'minmax(200px, auto)' }}>
             {journeyData.filter(d => d.day !== 'prelude').map((dayData) => {
               const status = getDayStatus(dayData.day);
               const isClickable = status === 'published';
@@ -133,7 +133,7 @@ export function JournalPage({ onNavigate }: JournalPageProps) {
                 <button
                   key={dayData.day}
                   onClick={() => handleDayClick(dayData.day)}
-                  className={`group relative border rounded-xl p-4 lg:p-6 transition-all duration-300 focus:outline-none focus:ring-3 focus:ring-navy/20 ${
+                  className={`group relative border rounded-xl p-6 lg:p-8 transition-all duration-300 focus:outline-none focus:ring-3 focus:ring-navy/20 ${
                     isClickable ? 'cursor-pointer hover:shadow-xl' : 'cursor-not-allowed'
                   }`}
                   style={{
@@ -146,7 +146,7 @@ export function JournalPage({ onNavigate }: JournalPageProps) {
                     borderWidth: status === 'planned' ? '2px' : '1px',
                     opacity: status === 'not-planned' ? '0.6' : '1',
                     filter: status === 'not-planned' ? 'blur(1px)' : 'none',
-                    minHeight: '180px'
+                    minHeight: '200px'
                   }}
                   onMouseEnter={(e) => {
                     if (isClickable) {
@@ -190,14 +190,14 @@ export function JournalPage({ onNavigate }: JournalPageProps) {
                 </div>
 
                 {/* Day Header */}
-                <div className="text-center flex items-center justify-center h-full">
+                <div className="text-center flex items-center justify-center h-full px-2">
                   <div
                     className="font-bold"
                     style={{
                       color: 'var(--navy)',
                       fontFamily: "'Cormorant Garamond', serif",
-                      fontSize: 'clamp(1.25rem, 3.5vw, 1.875rem)',
-                      lineHeight: '1.3',
+                      fontSize: 'clamp(1.125rem, 3vw, 1.5rem)',
+                      lineHeight: '1.5',
                       wordBreak: 'keep-all',
                       overflowWrap: 'normal',
                       hyphens: 'none',

@@ -33,7 +33,7 @@ export function HeroSection() {
       {/* Central Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         {/* Main Logo */}
-        <div className="flex justify-center mb-4">
+        <div className="flex justify-center mb-8">
           <img
             src={indiaExpLogo}
             alt="The India Experience"
@@ -44,20 +44,6 @@ export function HeroSection() {
             }}
           />
         </div>
-
-        {/* Location and Year */}
-        <p
-          style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: 'clamp(1rem, 2vw, 1.25rem)',
-            color: 'rgba(255, 255, 255, 0.9)',
-            fontWeight: '400',
-            textShadow: '0 2px 8px rgba(0, 0, 0, 0.4)',
-            marginBottom: 'clamp(1.5rem, 3vw, 2.5rem)'
-          }}
-        >
-          Chennai · Coimbatore · 2025
-        </p>
 
         {/* Subtitle */}
         <p

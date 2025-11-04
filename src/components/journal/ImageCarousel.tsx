@@ -8,6 +8,8 @@ import {
 } from '../ui/carousel';
 import firecrackerPhoto from '../../assets/photo_2025-11-04_19-46-30.jpg';
 import busPhoto from '../../assets/photo_2025-11-05_03-46-44.jpg';
+import trainCardsPhoto from '../../assets/photo_2025-11-05_03-48-08.jpg';
+import sitharaPhoto from '../../assets/photo_2025-11-05_05-07-48.jpg';
 
 interface ImageCarouselProps {
   className?: string;
@@ -17,13 +19,13 @@ export function ImageCarousel({ className = '' }: ImageCarouselProps) {
   const placeholderImages = [
     {
       id: 1,
-      url: 'https://images.pexels.com/photos/2098427/pexels-photo-2098427.jpeg?auto=compress&cs=tinysrgb&w=800',
-      alt: 'Traditional Indian temple architecture'
+      url: trainCardsPhoto,
+      alt: 'Playing cards on the Vande Bharat train'
     },
     {
       id: 2,
-      url: 'https://images.pexels.com/photos/3889751/pexels-photo-3889751.jpeg?auto=compress&cs=tinysrgb&w=800',
-      alt: 'Colorful traditional Indian market scene'
+      url: sitharaPhoto,
+      alt: 'Ms Sithara'
     },
     {
       id: 3,
@@ -75,7 +77,7 @@ export function ImageCarousel({ className = '' }: ImageCarouselProps) {
                   onMouseEnter={(e) => e.currentTarget.style.opacity = '1'}
                   onMouseLeave={(e) => e.currentTarget.style.opacity = '0.85'}
                 />
-                {image.id !== 4 && image.id !== 5 && (
+                {image.id === 3 && (
                   <div
                     className="absolute bottom-0 left-0 right-0 p-2"
                     style={{

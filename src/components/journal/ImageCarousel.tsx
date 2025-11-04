@@ -6,6 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '../ui/carousel';
+import firecrackerPhoto from '../../assets/photo_2025-11-04_19-46-30.jpg';
 
 interface ImageCarouselProps {
   className?: string;
@@ -35,8 +36,8 @@ export function ImageCarousel({ className = '' }: ImageCarouselProps) {
     },
     {
       id: 5,
-      url: 'https://images.pexels.com/photos/1571453/pexels-photo-1571453.jpeg?auto=compress&cs=tinysrgb&w=800',
-      alt: 'Indian cultural landscape'
+      url: firecrackerPhoto,
+      alt: 'Playing with firecrackers on the last night before leaving for the airport'
     }
   ];
 
@@ -73,24 +74,26 @@ export function ImageCarousel({ className = '' }: ImageCarouselProps) {
                   onMouseEnter={(e) => e.currentTarget.style.opacity = '1'}
                   onMouseLeave={(e) => e.currentTarget.style.opacity = '0.85'}
                 />
-                <div
-                  className="absolute bottom-0 left-0 right-0 p-2"
-                  style={{
-                    background: 'linear-gradient(to top, rgba(0,0,0,0.5), transparent)',
-                  }}
-                >
-                  <p
+                {image.id !== 5 && (
+                  <div
+                    className="absolute bottom-0 left-0 right-0 p-2"
                     style={{
-                      color: 'rgba(255, 255, 255, 0.85)',
-                      fontFamily: "'Work Sans', system-ui, sans-serif",
-                      fontWeight: '400',
-                      fontSize: '10px',
-                      fontStyle: 'italic'
+                      background: 'linear-gradient(to top, rgba(0,0,0,0.5), transparent)',
                     }}
                   >
-                    Coming soon
-                  </p>
-                </div>
+                    <p
+                      style={{
+                        color: 'rgba(255, 255, 255, 0.85)',
+                        fontFamily: "'Work Sans', system-ui, sans-serif",
+                        fontWeight: '400',
+                        fontSize: '10px',
+                        fontStyle: 'italic'
+                      }}
+                    >
+                      Coming soon
+                    </p>
+                  </div>
+                )}
               </div>
             </CarouselItem>
           ))}

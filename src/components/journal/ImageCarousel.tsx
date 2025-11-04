@@ -7,6 +7,7 @@ import {
   CarouselPrevious,
 } from '../ui/carousel';
 import firecrackerPhoto from '../../assets/photo_2025-11-04_19-46-30.jpg';
+import busPhoto from '../../assets/photo_2025-11-05_03-46-44.jpg';
 
 interface ImageCarouselProps {
   className?: string;
@@ -31,8 +32,8 @@ export function ImageCarousel({ className = '' }: ImageCarouselProps) {
     },
     {
       id: 4,
-      url: 'https://images.pexels.com/photos/2318370/pexels-photo-2318370.jpeg?auto=compress&cs=tinysrgb&w=800',
-      alt: 'Traditional Indian architecture detail'
+      url: busPhoto,
+      alt: 'Gazing out the bus window during the journey'
     },
     {
       id: 5,
@@ -74,7 +75,7 @@ export function ImageCarousel({ className = '' }: ImageCarouselProps) {
                   onMouseEnter={(e) => e.currentTarget.style.opacity = '1'}
                   onMouseLeave={(e) => e.currentTarget.style.opacity = '0.85'}
                 />
-                {image.id !== 5 && (
+                {image.id !== 4 && image.id !== 5 && (
                   <div
                     className="absolute bottom-0 left-0 right-0 p-2"
                     style={{

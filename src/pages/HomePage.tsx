@@ -8,12 +8,11 @@ interface HomePageProps {
 }
 
 export function HomePage({ onNavigate }: HomePageProps) {
-  const dayStatuses = journalConfig
-    .filter(config => typeof config.day === 'number')
-    .map(config => ({
-      day: config.day as number,
-      status: config.status
-    }));
+  const dayStatuses = journalConfig.map(config => ({
+    day: config.day,
+    label: config.label,
+    status: config.status
+  }));
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: 'var(--bg)' }}>
@@ -65,14 +64,29 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </div>
           
           <div className="flex flex-wrap gap-3">
-            {dayStatuses.map(({ day, status }) => (
-              <DayChip
-                key={day}
-                day={day}
-                status={status}
-                onClick={status === 'published' ? () => onNavigate('post', day) : undefined}
-              />
-            ))}
+            {dayStatuses.map(({ day, label, status }) => {
+              const handleClick = () => {
+                if (typeof day === 'number') {
+                  onNavigate('post', day);
+                } else if (day === 'prelude') {
+                  onNavigate('prelude');
+                } else if (day === 'goodbye-sg') {
+                  onNavigate('goodbye-sg');
+                } else if (day === 'goodbye-india') {
+                  onNavigate('post', day);
+                }
+              };
+
+              return (
+                <DayChip
+                  key={day}
+                  day={day}
+                  label={label}
+                  status={status}
+                  onClick={status === 'published' ? handleClick : undefined}
+                />
+              );
+            })}
           </div>
         </div>
       </section>

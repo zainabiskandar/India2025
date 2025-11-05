@@ -9,6 +9,7 @@ import {
 import firecrackerPhoto from '../../assets/photo_2025-11-04_19-46-30.jpg';
 import busPhoto from '../../assets/photo_2025-11-05_03-46-44.jpg';
 import sitharaPhoto from '../../assets/photo_2025-11-05_05-07-48.jpg';
+import westernGhatsPhoto from '../../assets/20251013_202045.jpg';
 
 interface ImageCarouselProps {
   className?: string;
@@ -18,8 +19,8 @@ export function ImageCarousel({ className = '' }: ImageCarouselProps) {
   const placeholderImages = [
     {
       id: 1,
-      url: 'https://images.pexels.com/photos/2098427/pexels-photo-2098427.jpeg?auto=compress&cs=tinysrgb&w=800',
-      alt: 'Traditional Indian temple architecture'
+      url: westernGhatsPhoto,
+      alt: 'Overlooking the Western Ghats'
     },
     {
       id: 2,
@@ -76,7 +77,7 @@ export function ImageCarousel({ className = '' }: ImageCarouselProps) {
                   onMouseEnter={(e) => e.currentTarget.style.opacity = '1'}
                   onMouseLeave={(e) => e.currentTarget.style.opacity = '0.85'}
                 />
-                {(image.id === 1 || image.id === 3) && (
+                {image.id === 3 && (
                   <div
                     className="absolute bottom-0 left-0 right-0 p-2"
                     style={{

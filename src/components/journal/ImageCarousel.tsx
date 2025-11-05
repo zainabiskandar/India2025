@@ -10,6 +10,7 @@ import firecrackerPhoto from '../../assets/photo_2025-11-04_19-46-30.jpg';
 import busPhoto from '../../assets/photo_2025-11-05_03-46-44.jpg';
 import sitharaPhoto from '../../assets/photo_2025-11-05_05-07-48.jpg';
 import westernGhatsPhoto from '../../assets/20251013_202045.jpg';
+import restaurantPhoto from '../../assets/20251014_132505.jpg';
 
 interface ImageCarouselProps {
   className?: string;
@@ -29,8 +30,8 @@ export function ImageCarousel({ className = '' }: ImageCarouselProps) {
     },
     {
       id: 3,
-      url: 'https://images.pexels.com/photos/3209049/pexels-photo-3209049.jpeg?auto=compress&cs=tinysrgb&w=800',
-      alt: 'South Indian cultural heritage'
+      url: restaurantPhoto,
+      alt: 'On the Go restaurant in Coimbatore'
     },
     {
       id: 4,
@@ -77,26 +78,6 @@ export function ImageCarousel({ className = '' }: ImageCarouselProps) {
                   onMouseEnter={(e) => e.currentTarget.style.opacity = '1'}
                   onMouseLeave={(e) => e.currentTarget.style.opacity = '0.85'}
                 />
-                {image.id === 3 && (
-                  <div
-                    className="absolute bottom-0 left-0 right-0 p-2"
-                    style={{
-                      background: 'linear-gradient(to top, rgba(0,0,0,0.5), transparent)',
-                    }}
-                  >
-                    <p
-                      style={{
-                        color: 'rgba(255, 255, 255, 0.85)',
-                        fontFamily: "'Work Sans', system-ui, sans-serif",
-                        fontWeight: '400',
-                        fontSize: '10px',
-                        fontStyle: 'italic'
-                      }}
-                    >
-                      Coming soon
-                    </p>
-                  </div>
-                )}
               </div>
             </CarouselItem>
           ))}

@@ -130,10 +130,10 @@ export function Footer({ onNavigate }: FooterProps = {}) {
         {/* Inspirational Quote */}
         <div className="text-center py-6 border-t" style={{ borderColor: 'var(--border)' }}>
           <p className="mb-3" style={{ color: 'var(--green)', fontStyle: 'italic', lineHeight: '1.6', maxWidth: '800px', margin: '0 auto 12px', fontSize: 'clamp(14px, 2vw, 18px)' }}>
-            கல்வி என்பது கற்றதை மற்றவர்களுடன் பகிர்ந்து கொள்வதே
+            கனவுகள் எண்ணங்களாக மாறி, எண்ணங்கள் செயல்களாக உருவாகின்றன
           </p>
           <p className="small" style={{ color: 'var(--muted)', fontStyle: 'italic', lineHeight: '1.6', maxWidth: '800px', margin: '0 auto' }}>
-            "Education is sharing what we learn with others"
+            Dream, dream, dream. Dreams transform into thoughts and thoughts result in action.
           </p>
         </div>
       </div>

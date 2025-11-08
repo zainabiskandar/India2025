@@ -133,7 +133,7 @@ export function Footer({ onNavigate }: FooterProps = {}) {
             கனவுகள் எண்ணங்களாக மாறி, எண்ணங்கள் செயல்களாக உருவாகின்றன
           </p>
           <p className="small" style={{ color: 'var(--muted)', fontStyle: 'italic', lineHeight: '1.6', maxWidth: '800px', margin: '0 auto' }}>
-            Dream, dream, dream. Dreams transform into thoughts and thoughts result in action.
+            "Dream, dream, dream. Dreams transform into thoughts and thoughts result in action."
           </p>
         </div>
       </div>

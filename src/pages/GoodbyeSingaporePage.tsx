@@ -33,7 +33,7 @@ export function GoodbyeSingaporePage({ onNavigate }: GoodbyeSingaporePageProps) 
         }}
       >
         <p>
-          The week before India passes in a blur of late nights and half-packed bags. I try my best to prepare for the ten days ahead, knowing I will miss some important classes but grateful there are no tests or assignments due. Still, my rhythm feels disrupted. I worry about falling behind, about how my professors might perceive my absence, about leaving things unfinished. In the end, I remind myself that sometimes doing what you can is already enough.
+          The week before India passes in a blur of late nights and half-packed bags. I try my best to prepare for the ten days ahead, knowing I will miss some important classes but grateful there are no tests and few assignments due. Still, my rhythm feels disrupted. I worry about falling behind, about how my professors might perceive my absence, about leaving things unfinished. In the end, I remind myself that sometimes doing what you can is already enough.
         </p>
 
         <p>

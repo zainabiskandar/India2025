@@ -44,7 +44,6 @@ export function Footer({ onNavigate }: FooterProps = {}) {
       }
     } catch (err) {
       setFeedback('Network error. Please try again.');
-      console.error(err);
     }
   };
 

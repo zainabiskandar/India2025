@@ -65,36 +65,21 @@ export function GoodbyeSingaporePage({ onNavigate }: GoodbyeSingaporePageProps) 
 
       <section className="mt-16">
         <div className="grid gap-6 md:grid-cols-2 max-w-4xl">
-          <figure className="m-0">
-            <div className="rounded-md overflow-hidden border" style={{ borderColor: 'var(--border)', aspectRatio: '4/3' }}>
-              <img
-                src={flightOverSingapore}
-                alt="Flying over Singapore waters"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <figcaption
-              className="mt-2 small text-center"
-              style={{ color: 'var(--muted)' }}
-            >
-              Flying over Singapore waters
-            </figcaption>
-          </figure>
-          <figure className="m-0">
-            <div className="rounded-md overflow-hidden border" style={{ borderColor: 'var(--border)', aspectRatio: '4/3' }}>
-              <img
-                src={indiaArrivalSign}
-                alt="First sign seen upon landing in India — Immigration and Visa on Arrival directions at Chennai airport"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <figcaption
-              className="mt-2 small text-center"
-              style={{ color: 'var(--muted)' }}
-            >
-              The first sign I saw landing in India
-            </figcaption>
-          </figure>
+          <div className="rounded-md overflow-hidden border" style={{ borderColor: 'var(--border)', aspectRatio: '4/3' }}>
+            <img
+              src={flightOverSingapore}
+              alt="Flying over Singapore waters"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="rounded-md overflow-hidden border" style={{ borderColor: 'var(--border)', aspectRatio: '4/3' }}>
+            <img
+              src={indiaArrivalSign}
+              alt="First sign seen upon landing in India — Immigration and Visa on Arrival directions at Chennai airport"
+              className="w-full h-full object-cover object-top"
+              style={{ objectPosition: 'center 20%' }}
+            />
+          </div>
         </div>
       </section>
 

@@ -1,4 +1,6 @@
 import React from 'react';
+import flightOverSingapore from '../assets/IMG_0844.JPG';
+import indiaArrivalSign from '../assets/IMG_0852.JPG';
 
 interface GoodbyeSingaporePageProps {
   onNavigate: (page: string, day?: number | string) => void;
@@ -63,51 +65,37 @@ export function GoodbyeSingaporePage({ onNavigate }: GoodbyeSingaporePageProps) 
 
       <section className="mt-16">
         <div className="grid gap-6 md:grid-cols-2 max-w-4xl">
-          <div
-            className="aspect-[4/3] rounded-md flex items-center justify-center border"
-            style={{ backgroundColor: 'var(--subtle)', borderColor: 'var(--border)' }}
-          >
-            <div className="text-center">
-              <p
-                className="small mb-2"
-                style={{ color: 'var(--muted)' }}
-              >
-                Photo placeholder
-              </p>
-              <p
-                className="small"
-                style={{ color: 'var(--muted)' }}
-              >
-                Alt text: Singapore departure scene
-              </p>
+          <figure className="m-0">
+            <div className="rounded-md overflow-hidden border" style={{ borderColor: 'var(--border)', aspectRatio: '4/3' }}>
+              <img
+                src={flightOverSingapore}
+                alt="Flying over Singapore waters"
+                className="w-full h-full object-cover"
+              />
             </div>
-          </div>
-          <div
-            className="aspect-[3/2] rounded-md flex items-center justify-center border"
-            style={{ backgroundColor: 'var(--subtle)', borderColor: 'var(--border)' }}
-          >
-            <div className="text-center">
-              <p
-                className="small mb-2"
-                style={{ color: 'var(--muted)' }}
-              >
-                Photo placeholder
-              </p>
-              <p
-                className="small"
-                style={{ color: 'var(--muted)' }}
-              >
-                Alt text: Travel preparations
-              </p>
+            <figcaption
+              className="mt-2 small text-center"
+              style={{ color: 'var(--muted)' }}
+            >
+              Flying over Singapore waters
+            </figcaption>
+          </figure>
+          <figure className="m-0">
+            <div className="rounded-md overflow-hidden border" style={{ borderColor: 'var(--border)', aspectRatio: '4/3' }}>
+              <img
+                src={indiaArrivalSign}
+                alt="First sign seen upon landing in India — Immigration and Visa on Arrival directions at Chennai airport"
+                className="w-full h-full object-cover"
+              />
             </div>
-          </div>
+            <figcaption
+              className="mt-2 small text-center"
+              style={{ color: 'var(--muted)' }}
+            >
+              The first sign I saw landing in India
+            </figcaption>
+          </figure>
         </div>
-        <p
-          className="small mt-4"
-          style={{ color: 'var(--muted)' }}
-        >
-          Photos by consent only.
-        </p>
       </section>
 
       <p
